@@ -1,0 +1,15 @@
+{% extends "skeleton.html" %}
+{% load autobreadcrumb %}
+
+{% block header_topbar_attrs %}{% endblock %}
+
+{% block base_content_attr %} class="row row-fluid"{% endblock %}
+
+{% block content %}
+    <div class="row-fluid unpadded equal-columns">
+        <div class="columns twelve content-part">
+            {% block breadcrumbs %}<ul class="breadcrumbs">{% block breadcrumbs_content %}{% autobreadcrumbs_tag %}{% endblock %}</ul>{% endblock %}
+            {% block content_part %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+// Add more screen width resolution for more granular breakpoints
+$screenTiny: 320px;
+$screenTinyHigh: 480px;
+//$screenSmall: 768px !default;
+$screenSmallHigh: 800px;
+$screenMediumLow: 1024px;
+//$screenMedium: 1279px !default;
+//$screenXlarge: 1441px !default;
+
+// Alignment addons
+.responsive-left{
+    float:none;
+    @media (min-width: $topBarBreakPoint) {
+        float:left;
+    }
+}
+.responsive-right{
+    float:none;
+    @media (min-width: $topBarBreakPoint) {
+        float:right;
+    }
+}
+
+// Grid addons
+.force-clearfix{
+    @include clearfix;
+}
+.row-fluid{
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    @extend %clearfix;
+    padding: 0 ($columnGutter/2);
+}
+.row.content{
+    width: $rowWidth;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: ($columnGutter/2) 0;
+}
+
+// Retire le padding des colonnes
+.columns.unpadded{
+    padding: 0;
+}
+
+// Image en bloc centré
+img.centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Pour afficher le nom d'une marque avec une Police dédiée
+/*.brand{
+    font-family: 'Radley', serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    // Pour le symbole de trademark ou copyright
+    sup{
+        font-size: 0.3em;
+        margin-left: 0.3em;
+    }
+}*/

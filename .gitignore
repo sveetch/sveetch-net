@@ -1,0 +1,26 @@
+*.pyc
+
+# vim
+.*.swp
+
+# virtualenv
+/bin
+/include
+/lib
+/lib64
+/build
+/src
+
+# buildout
+*.egg-info
+.installed.cfg
+/develop-eggs
+/django-apps-src
+/eggs
+/parts
+/etc
+# do not hide /var/log, if does not exist uwsgi refuses to start
+/var/log/uwsgi.log
+
+# project db
+*.sqlite3

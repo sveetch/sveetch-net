@@ -1,0 +1,102 @@
+{% extends "zinnia/base.html" %}
+{% load i18n comments zinnia_tags %}
+{% load url from future %}
+
+{% block head_title %}{{ object.title }}{% endblock %}
+
+{% block meta-description %}{% if object.excerpt %}{{ object.excerpt|striptags }}{% else %}{{ object.content|striptags|truncatewords:100 }}{% endif %}{% endblock %}
+
+{% block meta-keywords %}{% if object.tags %}{{ object.tags }}{% else %}{{ block.super }}{% endif %}{% endblock %}
+
+{% block link %}{{ block.super }}
+    {% with previous_entry=object.previous_entry %}{% if previous_entry %}
+    <link rel="prev" title="{{ previous_entry.title }}" href="{{ previous_entry.get_absolute_url }}">
+    {% endif %}{% endwith %}
+    {% with next_entry=object.next_entry %}{% if next_entry %}
+    <link rel="next" title="{{ next_entry.title }}" href="{{ next_entry.get_absolute_url }}">
+    {% endif %}{% endwith %}
+    <link rel="shortlink" href="{{ object.short_url }}">
+    <link rel="canonical" href="{{ object.get_absolute_url }}">
+    {% with year=object.creation_date|date:"Y" month=object.creation_date|date:"m" day=object.creation_date|date:"d" %}
+    <link rel="alternate" type="application/rss+xml" title="{% trans "RSS Feed of discussions on" %} '{{ object.title }}'" href="{% url 'zinnia_entry_discussion_feed' year month day object.slug %}">
+    <link rel="alternate" type="application/rss+xml" title="{% trans "RSS Feed of comments on" %} '{{ object.title }}'" href="{% url 'zinnia_entry_comment_feed' year month day object.slug %}">
+    <link rel="alternate" type="application/rss+xml" title="{% trans "RSS Feed of pingbacks on" %} '{{ object.title }}'" href="{% url 'zinnia_entry_pingback_feed' year month day object.slug %}">
+    <link rel="alternate" type="application/rss+xml" title="{% trans "RSS Feed of trackbacks on" %} '{{ object.title }}'" href="{% url 'zinnia_entry_trackback_feed' year month day object.slug %}">
+    {% endwith %}
+{% endblock %}
+
+{% block body-class %}entry entry-{{ object.pk }}{% if object.featured %} featured{% endif %} year-{{ object.creation_date|date:"Y" }} month-{{ object.creation_date|date:"m" }} week-{{ object.creation_date|date:"W" }} day-{{ object.creation_date|date:"d" }}{% endblock %}
+
+{% block content_part %}
+
+    {% block entry-content %}
+    {% include object.content_template with object_content=object.html_content|safe %}
+    {% endblock %}
+
+    {% block entry-widgets %}{% endblock %}
+
+    {% block entry-comments %}
+    <hr class="big">
+    <div id="comments">
+        <h3>{% trans "Comments" %}</h3>
+        {% if object.comment_count %}
+            {% with comment_list=object.comments %}
+            <div id="comment-list">
+                {% for comment in comment_list %}
+                <hr class="thin">
+                <div id="comment-{{ comment.pk }}-by-{{ comment.user_name|slugify }}"
+                    class="row comment vcard {% cycle box1,box2 %}{% if comment.user %} authenticated-comment{% if comment.user.is_staff %} staff-comment{% endif %}{% if comment.user.is_superuser %} superuser-comment{% endif %}{% endif %}">
+                    <div class="two columns text-center unpadded">
+                        <p class="comment-info-name">
+                        {% if comment.url %}
+                            <a href="{{ comment.url }}" rel="external nofollow" class="fn url">{{ comment.name }}</a>
+                        {% else %}
+                            <span class="fn">{{ comment.name }}</span>
+                        {% endif %}
+                        </p>
+                        <img src="{% get_gravatar comment.email 80 "G" %}"
+                            class="gravatar photo" alt="{{ comment.name }}">
+                    </div>
+                    <div class="ten columns">
+                        <p class="comment-info-date text-right">
+                        {% trans "on" %}
+                            {{ comment.submit_date|date:"SHORT_DATETIME_FORMAT" }} | <a href="#comment-{{ comment.pk }}-by-{{ comment.user_name|slugify }}"
+                            id="c{{ comment.pk }}" class="anchor-link"
+                            title="{% trans "Direct link to this comment" %}">#{{ forloop.counter }}</a>
+                        </p>
+                        {{ comment.comment|linebreaks }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endwith %}
+            {% if not object.comments_are_open %}
+                <p>{% trans "Comments are closed." %}</p>
+            {% endif %}
+        {% else %}
+            {% if object.comments_are_open %}
+                <p>{% trans "No comments yet." %}</p>
+            {% else %}
+                <p>{% trans "Comments are closed." %}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+    {% endblock %}
+
+    {% block entry-comments-form %}
+    {% if object.comments_are_open %}
+        {% render_comment_form for object %}
+    {% endif %}
+    {% endblock %}
+
+{% endblock %}
+
+{% block admin_tools %}
+{% if perms.zinnia.change_entry %}
+    <li>
+    <a href="{% url 'admin:zinnia_entry_change' object.pk %}" title="{% trans "Edit the entry" %}">
+        {% trans "Edit the entry" %}
+    </a>
+    </li>
+{% endif %}
+{% endblock %}

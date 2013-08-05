@@ -1,0 +1,300 @@
+// Your custom settings file to override Foundation defaults
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+//@import "foundation";
+
+// ----------------------------------------
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+@import "compass/css3";
+@import "foundation/settings";
+@import "foundation/functions/all";
+
+// Control which mixins you have access too
+
+@import "foundation/mixins/clearfix";
+@import "foundation/mixins/css-triangle";
+@import "foundation/mixins/font-size";
+
+// Must include next two for semantic grid to work
+
+@import "foundation/mixins/respond-to";
+@import "foundation/mixins/semantic-grid";
+
+@import "modular-scale";
+@import "foundation/common/globals";
+
+// Must include the grid for any responsiveness
+
+@import "foundation/components/grid";
+
+// Control which common styles get compiled
+
+@import "foundation/common/typography";
+@import "foundation/common/forms";
+
+// Control which components you get if customizing
+
+@import "foundation/components/modules/buttons";
+@import "foundation/components/modules/tabs";
+@import "foundation/components/modules/ui";
+@import "foundation/components/modules/topbar";
+@import "foundation/components/modules/navbar";
+// @import "foundation/components/modules/orbit";
+@import "foundation/components/modules/reveal";
+// @import "foundation/components/modules/offcanvas";
+// @import "foundation/components/modules/clearing";
+// @import "foundation/components/modules/joyride";
+
+// Media Queries Overrides
+@import "foundation/components/modules/mqueries";
+
+@import "font-awesome";
+@import "lifted-corners";
+@import "utils";
+@import "addons";
+
+html{
+    background-color: #1E1D1D;
+}
+
+body{
+    background-color: $white;
+}
+
+hr{
+    &.thin{
+        border-width: 1px 0 0;
+        margin: 10px 0 10px;
+    }
+    &.big{
+        border-width: 4px 0 0;
+        margin: 35px 0 30px;
+    }
+}
+// *****
+// HEADER
+// *****
+
+
+// *****
+// CONTENT
+// *****
+#content-container{
+    &.spaced{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    ul.breadcrumbs{
+        padding-bottom: 5px;
+        background-color: transparent;
+        border: 0;
+        
+        li:before { content: ">"; }
+        li:first-child:before { 
+            display: inline-block;
+            width: 1.75em;
+            text-align: left;
+            content: "\f0e8";
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: inherit;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a{
+            text-decoration: underline;
+        }
+    }
+    
+    // For a divised page in two part (menu at left, content at right)
+    .columns.menu-part{
+        padding: 0;
+        background-color: #f2f2f2;
+        border-right: 1px solid darken(#f2f2f2, 15%);
+        
+        // Copied accordion from F3 but without the "interactive" part
+        ul.accordion2{
+            margin: 0 0 22px 0;
+            border-bottom: 1px solid $secondaryColor;
+
+            &>li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                border-top: 3px solid #87C259;
+
+                & > div.title {
+                    background: lighten($secondaryColor, 5%);
+                    padding: 15px;
+                    padding-top: 13px;
+                    margin: 0;
+                    position: relative;
+                    border-#{$defaultFloat}: 1px solid $secondaryColor;
+                    border-#{$defaultOpposite}: 1px solid $secondaryColor;
+                    background: $white;
+
+                    h1, h2, h3, h4, h5 { margin: 0; }
+                    h2{
+                        font-size: 20px;
+                        color: #87C259;
+                        text-shadow: 1px 1px 0 #FFFFFF;
+                    }
+                    &:after {
+                        @include cssTriangle(6px, darken($secondaryColor, 30%), top);
+                        position: absolute;
+                        #{$defaultOpposite}: 15px;
+                        top: 21px;
+                    }
+                }
+
+                .content {
+                    padding: 15px;
+                    background: $white;
+                    display: block;
+                    border-#{$defaultFloat}: 1px solid $secondaryColor;
+                    border-#{$defaultOpposite}: 1px solid $secondaryColor;
+                }
+            }
+        }
+        
+        &>ul{
+            list-style-type: none;
+            &>li{
+                position: relative;
+                a{
+                    display: block;
+                    width: 100%;
+                    border-right: 0;
+                }
+                &.active{
+                    &>a:after {
+                        position: absolute;
+                        top: 5px;
+                        right: -1px;
+                        @include cssTriangle(16px, #ffffff, right);
+                    }
+                }
+            }
+        }
+    }
+    .content-part{
+        padding-top: 10px;
+    }
+    
+    // Content introduction merged with the header
+    #content-intro{
+        background-color: #9DCD78;
+        @include background-image(linear-gradient(#9DCD78, #99CB72 98%, #639938));
+        padding: 25px 0;
+        
+        // Forcing font size and color within the intro block
+        div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,th,td {
+            font-size: 24px;
+            color: $white;
+            @include text-shadow(rgba(black, 0.2) 1px 1px 0);
+        }
+        a{
+            color: #305A13;
+        }
+    }
+}
+
+@import "zinnia";
+
+#djangocodemirror-sample{
+    width: auto !important;
+}
+
+// Styling the <select/> element like other <input/>
+select{
+    @extend input[type="text"];
+    box-shadow: none;
+}
+
+// Enforce styling on checkbox and custom-form checkbox
+.ctrlHolder.checkbox{
+    label{
+        display: inline;
+    }
+    span.custom.checkbox{
+        cursor: pointer;
+        
+        &.checked:before{
+            cursor: pointer;
+        }
+    }
+}
+
+fieldset{ 
+    // Fieldsets need a bottom padding too !
+    padding: 12px 12px;
+    // Try to distinguish fieldset from the page background
+    background-color: #FCFCFC;
+    @include box-shadow(0 1px 2px rgba(0,0,0,0.1));
+    
+    // More readable legends and labels
+    legend, label{ 
+        font-size: 16px;
+    }
+    
+    // Much better spacing between row blocks
+    .row + .row{ 
+        margin-top: 12px;
+    }
+}
+
+// For SplitDateTimeField
+.datetimesplit{
+     .row & .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .dateinput{
+        float: left;
+        width: 49.5%;
+    }
+    .timeinput{
+        float: right;
+        width: 49.5%;
+        //@include clearfix;
+    }
+}
+
+// Give a little spaces between button in the button holders 
+.buttonHolder{
+    text-align:right;
+    
+    input.button + input.button,
+    button + button{
+        margin-left: ms(0) / 2;
+    }
+}
+
+table.full{
+    width: 100%;
+}
+
+// FOOTER
+#footer-container{
+    color: $white;
+    background-color: #272625;
+    
+    a{
+        color: #F55D2D;
+    }
+    
+    .links{
+        padding: 25px 10px;
+    }
+    
+    .mentions{
+        color: #a4a4a4;
+        padding: 25px 10px;
+        background-color: #1E1D1D;
+    }
+}

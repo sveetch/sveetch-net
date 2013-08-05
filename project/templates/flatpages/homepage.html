@@ -1,0 +1,15 @@
+{% extends "skeleton.html" %}
+{% load autobreadcrumb %}
+
+
+{% block head_title %}{{ flatpage.title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+    {% block intro %}{% endblock %}
+    
+    <div class="row">
+        <div class="twelve columns">
+            {{ flatpage.content }}
+        </div>
+    </div>
+{% endblock %}
