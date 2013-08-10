@@ -17,15 +17,14 @@ Install
 
 This project is made to be build with `buildout`_ system in a `virtualenv`_ environment. 
 
-But there is also a ``requirements.txt`` file than you can use with `virtualenv`_+`pip`_. 
-This document will only treat about the `buildout`_ way.
+But there is also a ``requirements.txt`` file than you can use with `virtualenv`_ + `pip`_. This document will only treat about the `buildout`_ way.
 
 So to start, clone the project where you want then enter it and type that : ::
 
     virtualenv --no-site-packages --setuptools .
     source bin/activate
 
-Sometime, you `setuptools`_ installation on your system is too old (<0.8), if you don't know about it just upgrade it (at this point you should be in your virtual environment so there are no risk for your system) : 
+Sometime, your `setuptools`_ installation on your system is too old (<0.8), if you don't know about it just upgrade it (at this point you should be in your virtual environment so there are no risk for your system) : ::
 
     pip install --upgrade setuptools
 
