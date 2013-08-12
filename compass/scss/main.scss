@@ -57,11 +57,11 @@
 @import "addons";
 
 html{
-    background-color: #1E1D1D;
+    background-color: #ebefe0;
 }
 
 body{
-    background-color: $white;
+    background-color: transparent;
 }
 
 hr{
@@ -74,15 +74,66 @@ hr{
         margin: 35px 0 30px;
     }
 }
+
 // *****
 // HEADER
 // *****
-
+#header-container{
+    border-top: 10px solid #9cd8da;
+    background-color: transparent;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgLAQkJLNkASwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAUSURBVAjXY9h6+sx/BkIAQxHpAgBe0BB4hVtjewAAAABJRU5ErkJggg%3D%3D");
+    background-repeat: repeat;
+    
+    .wrap{
+        $opa: 0.7;
+        @include background-image(linear-gradient(rgba(darken(#aad3d5, 3%), .7), rgba(darken(#aad3d5, 1%), .7) 38%, rgba(lighten(#d4eeef, 2%), 1.0) 97%, rgba(#d1ebec, 1.0) 98%, rgba(#cee8e9, 1.0)));
+    }
+    
+    .top-bar{
+        background-color: transparent;
+        
+        .global-menu{
+            li{
+                a{
+                    padding: 0 25px 0 80px;
+                    position: relative;
+                }
+                
+                &.weblog{
+                    @include box-3D($front-bgcolor: rgb(227, 202, 96), $top-bgcolor: rgb(245, 235, 189), $left-bgcolor: rgb(203, 179, 77));
+                }
+                &.documents{
+                    @include box-3D($front-bgcolor: rgb(155, 209, 121), $top-bgcolor: rgb(214, 236, 201), $left-bgcolor: rgb(133, 198, 91));
+                }
+                &.tribune{
+                    @include box-3D($front-bgcolor: rgb(117, 177, 214), $top-bgcolor: rgb(199, 223, 238), $left-bgcolor: rgb(86, 160, 204));
+                }
+            }
+        }
+    }
+    
+    // Logo
+    #brand-container{
+        h1{
+            a{
+                padding-left: 0;
+                font-size: 42px !important;
+                color: #2f7965;
+                font-weight: 300;
+                text-transform: lowercase;
+            }
+        }
+    }
+}
 
 // *****
 // CONTENT
 // *****
 #content-container{
+  //  @include background-image(linear-gradient(#e2f4f6, #f7fcf6));
+    @include background-image(linear-gradient(#dff4f5, #f1fadf 241px, #f7fbda 337px, #f8fce1 424px, #f8fcee 530px, #f7fcf8));
+    background-repeat: no-repeat;
+    
     &.spaced{
         margin-top: 15px;
         margin-bottom: 15px;
@@ -126,7 +177,7 @@ hr{
                 list-style: none;
                 margin: 0;
                 padding: 0;
-                border-top: 3px solid #87C259;
+                border-top: 3px solid #87c259;
 
                 & > div.title {
                     background: lighten($secondaryColor, 5%);
@@ -141,7 +192,7 @@ hr{
                     h1, h2, h3, h4, h5 { margin: 0; }
                     h2{
                         font-size: 20px;
-                        color: #87C259;
+                        color: #87c259;
                         text-shadow: 1px 1px 0 #FFFFFF;
                     }
                     &:after {
@@ -188,8 +239,8 @@ hr{
     
     // Content introduction merged with the header
     #content-intro{
-        background-color: #9DCD78;
-        @include background-image(linear-gradient(#9DCD78, #99CB72 98%, #639938));
+        background-color: #9dcd78;
+        @include background-image(linear-gradient(#9dcd78, #99cb72 98%, #639938));
         padding: 25px 0;
         
         // Forcing font size and color within the intro block
@@ -281,20 +332,17 @@ table.full{
 
 // FOOTER
 #footer-container{
-    color: $white;
-    background-color: #272625;
+    padding: 30px 0 15px;
+    color: #b17a04;
+    background-color: #ebefe0;
+    @include background-image(linear-gradient(#dfe5cb, #ebefe0));
+    background-repeat: no-repeat;
     
     a{
-        color: #F55D2D;
+        color: #202219;
     }
     
     .links{
         padding: 25px 10px;
-    }
-    
-    .mentions{
-        color: #a4a4a4;
-        padding: 25px 10px;
-        background-color: #1E1D1D;
     }
 }

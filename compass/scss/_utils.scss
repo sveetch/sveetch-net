@@ -101,6 +101,70 @@
     }*/
 }
 
+@mixin box-3D($size: 40px, $weight: 10px, $font-color: #ffffff, $front-bgcolor: rgb(227, 202, 96), $top-bgcolor: rgb(245, 235, 189), $left-bgcolor: rgb(203, 179, 77)){
+    $weight: 10px;
+
+    .box3d {
+        width: $size;
+        height: $size;
+        padding: ($weight - ($weight/5)) $weight/2;
+        margin: $weight;
+        position: absolute;
+        left: $weight*2;
+        top: $size;
+        font-size: $size/2;
+        color: $font-color;
+        line-height: $size/2;
+        text-align: center;
+        background-color: $front-bgcolor;
+    }
+    .box3d::before {
+        width: $weight;
+        height: 100%;
+        background-color: grey;
+        content:'';
+        display: block;
+        position: absolute;
+        top: -$weight/2;
+        left: -$weight;
+        @include skew(0, 45deg);
+        background-color: $left-bgcolor;
+    }
+    .box3d::after {
+        width: 100%;
+        height: $weight;
+        background-color: grey;
+        content:'';
+        display: block;
+        position: absolute;
+        right: $weight/2;
+        top: -$weight;
+        @include skewX(45deg);
+        background-color: $top-bgcolor;
+    }
+    //.box3d.alt:active {
+    //  -webkit-transform: translate(-10px, -10px);
+    //  -moz-transform: translate(-10px, -10px);
+    //  -o-transform: translate(-10px, -10px);
+    //  -ms-transform: translate(-10px, -10px);
+    //}
+
+    .box3d:active::before {
+        width: $weight/2;
+        top: -$weight/4;
+        left: -$weight/2;
+    }
+
+    .box3d:active::after {
+        height: $weight/2;
+        right: $weight/4;
+        top: -$weight/2;
+    }
+    // .box3d:active:after, .box3d:active:before {
+    //  display: none;
+    //}
+}
+
 // Base stuff to add for content with Foundation
 @mixin foundation-content-base(){
     

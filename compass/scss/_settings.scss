@@ -35,7 +35,7 @@ $headerFontFamily: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
 $bodyFontFamily: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
 // $bodyFontWeight: normal;
 // $bodyFontStyle: normal;
-// $bodyFontColor: $txtColor;
+$bodyFontColor: #3C6F75;
 
 // Text Direction Settings
 
@@ -97,8 +97,19 @@ $bodyFontFamily: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
 
 // Top Bar Settings
 
+$topBarBgColor: #d4eeef;
+$topBarHeight: 135px;
+$topBarHeightMobile: 135px;
+// $topBarBtmMargin: 30px;
+$topBarTitleWeight: 300;
+$topBarTitleSize: 36px;
+$topBarLinkColor: #5a5a5a;
+$topBarLinkWeight: 600;
+$topBarLinkSize: 18px;
+// $topBarDropBgColor: #222;
+// $topBarDropLinkColor: #fff;
 // $topBarDropToggleSize: 5px;
-// $topBarDropToggleColor: #305A13;
+// $topBarDropToggleColor: #fff;
 // $topBarDropToggleAlpha: 0.5;
 // $topBarSearchWidth: 200px;
 // $topBarBreakPoint: 940px; // Change to 9999px for always mobile layout
@@ -229,7 +240,6 @@ $bodyFontFamily: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
 
 // $ratio: $golden; // THIS IS DEFAULT IN MODULAR-SCALE
 // $baseFontSize: 14px;
-$baseFontSize: 14px;
 // $importantModNum: 44px;
 // $base-size: $baseFontSize $importantModNum;
 // Produced the following list of values: 14, 17, 23, 27, 37, 44, 59, 71, 95, 115;
