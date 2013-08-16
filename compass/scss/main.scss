@@ -70,7 +70,7 @@ hr{
         margin: 10px 0 10px;
     }
     &.big{
-        border-width: 4px 0 0;
+        border-width: 3px 0 0;
         margin: 35px 0 30px;
     }
 }
@@ -78,15 +78,16 @@ hr{
 // *****
 // HEADER
 // *****
+$header-border-top: 10px;
 #header-container{
-    border-top: 10px solid #9cd8da;
+    border-top: $header-border-top solid #9cd8da;
     background-color: transparent;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgLAQkJLNkASwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAUSURBVAjXY9h6+sx/BkIAQxHpAgBe0BB4hVtjewAAAABJRU5ErkJggg%3D%3D");
     background-repeat: repeat;
     
     .wrap{
-        $opa: 0.7;
         @include background-image(linear-gradient(rgba(darken(#aad3d5, 3%), .7), rgba(darken(#aad3d5, 1%), .7) 38%, rgba(lighten(#d4eeef, 2%), 1.0) 97%, rgba(#d1ebec, 1.0) 98%, rgba(#cee8e9, 1.0)));
+        border-top: 1px solid darken(#9CD8DA, 20%);
     }
     
     .top-bar{
@@ -97,6 +98,7 @@ hr{
                 a{
                     padding: 0 25px 0 80px;
                     position: relative;
+                    text-shadow: 1px 1px 0 #FFFFFF;
                 }
                 
                 &.weblog{
@@ -113,14 +115,66 @@ hr{
     }
     
     // Logo
+    #auth-menu{
+        position: absolute;
+        top: -1px;
+        right: 0;
+        z-index: 7000;
+        border-color: darken(#9CD8DA, 20%);
+        border-top: 1px solid #9CD8DA;
+        @include border-top-radius(0);
+        background-color: #9CD8DA;
+        box-shadow: none;
+        
+        &>span{
+            border-color: inherit;
+            background-color: inherit;
+            @include border-bottom-right-radius($buttonRadius);
+            box-shadow: 1px 0px 0 rgba(255, 255, 255, 0.5) inset;
+            
+            &:hover, &:focus{
+                background-color: darken(#9CD8DA, 10%);
+            }
+        }
+        &>a:hover, a:focus{
+            background-color: darken(#9CD8DA, 10%);
+        }
+        
+        // Restore and adjust dropdown styles which are overriden by top-bar styles
+        &>ul{
+            height: auto;
+            line-height: 1;
+            left: auto;
+            right: -1px;
+            
+            li{
+                float: none;
+                
+                &.divider { width: auto; min-height: 0; padding: 0; height: 1px; margin: 4px 0; background: darken($white, 7%); }
+                
+                a{
+                    color: #555555;
+                    font-size: 14px;
+                    font-weight: normal;
+                    height: auto;
+                    padding: 6px 14px;
+                    line-height: inherit;
+                }
+            }
+        }
+    }
+    
+    // Logo
     #brand-container{
         h1{
+            font-family: 'Grand Hotel', cursive;
+            
             a{
                 padding-left: 0;
-                font-size: 42px !important;
+                font-size: 50px !important;
                 color: #2f7965;
                 font-weight: 300;
-                text-transform: lowercase;
+                text-shadow: 1px 1px 0 #FFFFFF;
             }
         }
     }

@@ -10,7 +10,7 @@
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}"/>
     {% comment %}<link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}favicon.ico">{% endcomment %}
 
-    {% block html_base_links %}<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,600,700,400italic,600italic,700italic">
+    {% block html_base_links %}<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300,300italic,600,400italic,600italic,700,700italic">
     {% assets "main_css" %}
         <link rel="stylesheet" href="{{ ASSET_URL }}">
     {% endassets %}{% endblock %}
@@ -35,32 +35,32 @@
 
                 <section>
                     <ul class="right global-menu">
-                        <li class="weblog"><a href="{% url 'zinnia_entry_archive_index' %}"><span class="box3d"><i class="icon-newspaper"></i></span> {% trans "Weblog" %}</a></li>
+                        <li class="weblog"><a href="{% url 'zinnia_entry_archive_index' %}"><span class="box3d"><i class="icon-blog"></i></span> {% trans "Weblog" %}</a></li>
                         <li class="documents"><a href="{% url 'documents-index' %}"><span class="box3d"><i class="icon-file"></i></span> {% trans "Documents" %}</a></li>
                         <li class="tribune"><a href="{% url 'tribune-board' %}"><span class="box3d"><i class="icon-bubbles"></i></span> {% trans "Tribune" %}</a></li>
-                        {% if user.is_authenticated %}
-                            <li class="has-dropdown">
-                                <a href="#"><strong>{{ user.username }}</strong></a>
-                                <ul class="dropdown">
-                                    {% if user.is_staff %}
-                                        <li><a href="{% url 'admin:index' %}">{% trans "Django admin" %}</a></li>
-                                        <li{% currentwalkthroughto 'documents-board' %} class="active"{% endcurrentwalkthroughto %}><a href="{% url 'documents-board' %}">{% trans "Document management" %}</a></li>
-                                        <li class="divider"></li>
-                                    {% endif %}
-                                    <li><a href="{% url 'auth_logout' %}">{% trans "Logout" %}</a></li>
-                                </ul>
-                            </li>
-                        {% else %}
-                            <li class="has-dropdown">
-                                <a href="{% url 'auth_login' %}">{% trans "Login" %}</a>
-                                <ul class="dropdown">
-                                    <li><a href="{% url 'registration_register' %}">{% trans "Register" %}</a></li>
-                                </ul>
-                            </li>
-                        {% endif %}
-
                     </ul>
                 </section>
+                
+                {% if user.is_authenticated %}
+                <div id="auth-menu" class="button small radius split dropdown">
+                    <a href="#foo"><strong><i class="icon-user"></i> {{ user.username }}</strong></a><span></span>
+                    <ul>
+                        {% if user.is_staff %}
+                            <li><a href="{% url 'admin:index' %}"><i class="icon-cog"></i> {% trans "Django admin" %}</a></li>
+                            <li{% currentwalkthroughto 'documents-board' %} class="active"{% endcurrentwalkthroughto %}><a href="{% url 'documents-board' %}"><i class="icon-file"></i> {% trans "Document management" %}</a></li>
+                            <li class="divider"></li>
+                        {% endif %}
+                        <li><a href="{% url 'auth_logout' %}"><i class="icon-exit"></i> {% trans "Logout" %}</a></li>
+                    </ul>
+                </div>
+                {% else %}
+                <div id="auth-menu" class="button small radius split dropdown">
+                    <a href="{% url 'auth_login' %}"><i class="icon-enter"></i> {% trans "Login" %}</a><span></span>
+                    <ul>
+                        <li><a href="{% url 'registration_register' %}"><i class="icon-quill"></i> {% trans "Register" %}</a></li>
+                    </ul>
+                </div>
+                {% endif %}
             </nav>
         </div>
     </div>{% endspaceless %}
