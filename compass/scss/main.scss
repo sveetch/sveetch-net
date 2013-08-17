@@ -391,6 +391,7 @@ table.full{
     background-color: #ebefe0;
     @include background-image(linear-gradient(#dfe5cb, #ebefe0));
     background-repeat: no-repeat;
+    border-top: 4px solid darken(#dfe5cb, 10%);
     
     a{
         color: #202219;

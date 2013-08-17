@@ -23,12 +23,11 @@ django-mptt == 0.5.5
 docutils == 0.10
 django-registration == 0.8
 django-simple-captcha == 0.3.4
-django-crispy-forms == 1.2.7
 django-braces == 1.0.0
-crispy-forms-foundation == 0.2.1
+crispy-forms-foundation == 0.2.3
 djangocodemirror == 0.8.7.3
 autobreadcrumbs == 0.8.1
-sveeaccounts == 0.2.3.1
-sveedocuments == 0.9.9.1
+sveeaccounts == 0.2.3.2
+sveedocuments == 0.9.9.3
 djangotribune == 0.6.0
 rstview == 0.1.1
