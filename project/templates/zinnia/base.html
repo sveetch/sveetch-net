@@ -47,23 +47,23 @@
             
             <div class="columns three blog-side-bar">
             {% block sidebar %}
-                <div id="widget-categories" class="widget">
+                <div id="widget-categories" class="widget box">
                     <h3>{% trans "Categories" %}</h3>
                     {% get_categories %}
                 </div>
-                <div id="widget-authors" class="widget">
+                <div id="widget-authors" class="widget box">
                     <h3>{% trans "Authors" %}</h3>
                     {% get_authors %}
                 </div>
-                <div id="widget-tags" class="widget">
+                <div id="widget-tags" class="widget box">
                     <h3>{% trans "Tags" %}</h3>
                     {% get_tag_cloud %}
                 </div>
-                <div id="widget-recents" class="widget">
+                <div id="widget-recents" class="widget box">
                     <h3>{% trans "Recent entries" %}</h3>
                     {% get_recent_entries %}
                 </div>
-                <div id="widget-archives" class="widget">
+                <div id="widget-archives" class="widget box tree">
                     <h3>{% trans "Archives" %}</h3>
                     {% get_archives_entries_tree %}
                 </div>

@@ -5938,7 +5938,19 @@ img.centered {
         margin-left: 0.3em;
     }
 }*/
-/* line 67, ../../../compass/scss/_addons.scss */
+/* line 66, ../../../compass/scss/_addons.scss */
+.button.tertiary {
+  color: #386060;
+  background-color: #CEE8E9;
+  border: 1px solid #99cfd1;
+}
+/* line 71, ../../../compass/scss/_addons.scss */
+.button.tertiary:hover, .button.tertiary:focus {
+  background-color: #bce0e1;
+  border: 1px solid #88c7c9;
+}
+
+/* line 78, ../../../compass/scss/_addons.scss */
 .button.secondary {
   color: white;
 }
@@ -6402,84 +6414,122 @@ hr.big {
   color: #305A13;
 }
 
-/* line 3, ../../../compass/scss/_zinnia.scss */
-.label-cloud.tags .button {
-  margin: 3px;
+/* line 2, ../../../compass/scss/_zinnia.scss */
+.empty {
+  font-style: italic;
 }
 
-/* line 8, ../../../compass/scss/_zinnia.scss */
+/* line 7, ../../../compass/scss/_zinnia.scss */
 .blog-side-breadcrumbs ul.breadcrumbs {
   margin-bottom: 0;
 }
 
-/* line 12, ../../../compass/scss/_zinnia.scss */
+/* line 11, ../../../compass/scss/_zinnia.scss */
 .blog-side-tools {
   padding: 0;
 }
 
-/* line 15, ../../../compass/scss/_zinnia.scss */
+/* line 14, ../../../compass/scss/_zinnia.scss */
 .blog-side-bar {
   padding: 0;
   position: relative;
-  background-color: #F8F8F8;
-  border-left: 1px solid #EEEEEE;
-  border-right: 3px solid #EEEEEE;
-  border-top: 1px solid #E6E6E6;
-  border-bottom: 1px solid #E6E6E6;
-  box-shadow: 1px 0 0 white inset;
+  color: #9ca27e;
 }
-/* line 25, ../../../compass/scss/_zinnia.scss */
+/* line 19, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar a {
+  color: #386060;
+}
+/* line 23, ../../../compass/scss/_zinnia.scss */
 .blog-side-bar .widget {
-  padding-bottom: 17px;
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #cee8e9;
+  background-color: #fdfff5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
-/* line 28, ../../../compass/scss/_zinnia.scss */
+/* line 30, ../../../compass/scss/_zinnia.scss */
 .blog-side-bar .widget > * {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-/* line 33, ../../../compass/scss/_zinnia.scss */
+/* line 35, ../../../compass/scss/_zinnia.scss */
 .blog-side-bar .widget h3 {
-  margin: 0 -3px 17px 0;
-  padding: 17px 15px;
-  color: #ffffff;
-  font-size: 16px;
+  margin: 0;
+  padding: 5px 8px 7px;
+  font-size: 17px;
+  font-weight: 600;
   line-height: 1;
-  font-weight: 700;
-  background-color: #4D4D4D;
-  border-right: 4px solid #1A1A1A;
+  color: white;
+  border-top: 1px solid #d0910b;
+  background-color: #d0910b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
-/* line 44, ../../../compass/scss/_zinnia.scss */
+/* line 47, ../../../compass/scss/_zinnia.scss */
 .blog-side-bar .widget > .side-nav {
   padding-top: 0;
   padding-bottom: 0;
 }
+/* line 51, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget > .side-nav > li {
+  margin: 0;
+  padding: 7px 0;
+}
+/* line 57, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget li, .blog-side-bar .widget p {
+  font-size: 13px;
+}
+/* line 61, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget li + li {
+  border-top: 1px dashed #b9d7d4;
+}
+/* line 66, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget .tree li {
+  border: 0;
+}
+/* line 71, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget + .widget {
+  margin-top: 17px;
+}
+/* line 75, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget .label-cloud {
+  padding: 10px 0 5px;
+}
+/* line 79, ../../../compass/scss/_zinnia.scss */
+.blog-side-bar .widget .label-cloud.tags .button {
+  margin: 3px;
+  font-weight: 400;
+}
 
-/* line 54, ../../../compass/scss/_zinnia.scss */
+/* line 91, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-header .entry-title {
   margin-bottom: 5px;
   font-size: 27px;
 }
-/* line 58, ../../../compass/scss/_zinnia.scss */
+/* line 95, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-header .entry-title a {
-  color: black;
+  color: #386060;
 }
-/* line 62, ../../../compass/scss/_zinnia.scss */
+/* line 99, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-header .authors {
   padding: 0 0 5px;
   margin-bottom: 0;
   font-size: 17px;
   color: #909090;
 }
-/* line 70, ../../../compass/scss/_zinnia.scss */
+/* line 107, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-info {
   padding: 10px 0;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
-/* line 74, ../../../compass/scss/_zinnia.scss */
+/* line 111, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-info .published:before {
   content: "\f073";
   margin-right: 5px;
-  color: #5da423;
+  color: #386060;
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -6496,11 +6546,11 @@ hr.big {
   background-repeat: repeat;
   margin-top: 0;
 }
-/* line 81, ../../../compass/scss/_zinnia.scss */
+/* line 118, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-info .comments:before {
   content: "\f075";
   margin-right: 5px;
-  color: #5da423;
+  color: #386060;
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -6517,11 +6567,11 @@ hr.big {
   background-repeat: repeat;
   margin-top: 0;
 }
-/* line 88, ../../../compass/scss/_zinnia.scss */
+/* line 125, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-info .categories:before {
   content: "\f02e";
   margin-right: 5px;
-  color: #5da423;
+  color: #386060;
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -6538,7 +6588,7 @@ hr.big {
   background-repeat: repeat;
   margin-top: 0;
 }
-/* line 96, ../../../compass/scss/_zinnia.scss */
+/* line 133, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-content {
   *zoom: 1;
 }
@@ -6551,7 +6601,7 @@ hr.big {
 .blog-side-content article.hentry .entry-content:after {
   clear: both;
 }
-/* line 105, ../../../compass/scss/_zinnia.scss */
+/* line 142, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .continue-reading .button:after {
   content: "\f0da";
   margin-left: 5px;
@@ -6572,7 +6622,7 @@ hr.big {
   background-repeat: repeat;
   margin-top: 0;
 }
-/* line 114, ../../../compass/scss/_zinnia.scss */
+/* line 151, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-image p {
   margin: 0;
   padding: 5px 0 5px 5px;
@@ -6582,7 +6632,7 @@ hr.big {
   /* prevent shadows falling behind containers with backgrounds */
   margin: 0;
 }
-/* line 120, ../../../compass/scss/_zinnia.scss */
+/* line 157, ../../../compass/scss/_zinnia.scss */
 .blog-side-content article.hentry .entry-image p img {
   position: relative;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
@@ -6622,20 +6672,20 @@ hr.big {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 128, ../../../compass/scss/_zinnia.scss */
+/* line 165, ../../../compass/scss/_zinnia.scss */
 .blog-side-content #comments .comment-info-name {
   color: #404040;
   font-size: 12px;
   font-weight: 600;
 }
-/* line 133, ../../../compass/scss/_zinnia.scss */
+/* line 170, ../../../compass/scss/_zinnia.scss */
 .blog-side-content #comments .comment-info-date {
   color: #404040;
   font-size: 12px;
   font-weight: 600;
   text-transform: capitalize;
 }
-/* line 140, ../../../compass/scss/_zinnia.scss */
+/* line 177, ../../../compass/scss/_zinnia.scss */
 .blog-side-content #comments .gravatar {
   border: 5px solid #ffffff;
   position: relative;
@@ -6676,35 +6726,35 @@ hr.big {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-/* line 146, ../../../compass/scss/_zinnia.scss */
+/* line 183, ../../../compass/scss/_zinnia.scss */
 .blog-side-content hr.big {
   border-color: #99B7B4;
 }
 
-/* line 314, ../../../compass/scss/main.scss */
+/* line 320, ../../../compass/scss/main.scss */
 #djangocodemirror-sample {
   width: auto !important;
 }
 
-/* line 319, ../../../compass/scss/main.scss */
+/* line 328, ../../../compass/scss/main.scss */
 select {
   box-shadow: none;
 }
 
-/* line 326, ../../../compass/scss/main.scss */
+/* line 335, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox label {
   display: inline;
 }
-/* line 329, ../../../compass/scss/main.scss */
+/* line 338, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox span.custom.checkbox {
   cursor: pointer;
 }
-/* line 332, ../../../compass/scss/main.scss */
+/* line 341, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox span.custom.checkbox.checked:before {
   cursor: pointer;
 }
 
-/* line 338, ../../../compass/scss/main.scss */
+/* line 347, ../../../compass/scss/main.scss */
 fieldset {
   padding: 12px 12px;
   background-color: #FCFCFC;
@@ -6712,47 +6762,47 @@ fieldset {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* line 346, ../../../compass/scss/main.scss */
+/* line 355, ../../../compass/scss/main.scss */
 fieldset legend, fieldset label {
   font-size: 16px;
 }
-/* line 351, ../../../compass/scss/main.scss */
+/* line 360, ../../../compass/scss/main.scss */
 fieldset .row + .row {
   margin-top: 12px;
 }
 
-/* line 358, ../../../compass/scss/main.scss */
+/* line 367, ../../../compass/scss/main.scss */
 .row .datetimesplit .row {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 362, ../../../compass/scss/main.scss */
+/* line 371, ../../../compass/scss/main.scss */
 .datetimesplit .dateinput {
   float: left;
   width: 49.5%;
 }
-/* line 366, ../../../compass/scss/main.scss */
+/* line 375, ../../../compass/scss/main.scss */
 .datetimesplit .timeinput {
   float: right;
   width: 49.5%;
 }
 
-/* line 374, ../../../compass/scss/main.scss */
+/* line 386, ../../../compass/scss/main.scss */
 .buttonHolder {
   text-align: right;
 }
-/* line 378, ../../../compass/scss/main.scss */
+/* line 390, ../../../compass/scss/main.scss */
 .buttonHolder input.button + input.button,
 .buttonHolder button + button {
   margin-left: 7.5px;
 }
 
-/* line 383, ../../../compass/scss/main.scss */
+/* line 395, ../../../compass/scss/main.scss */
 table.full {
   width: 100%;
 }
 
-/* line 388, ../../../compass/scss/main.scss */
+/* line 402, ../../../compass/scss/main.scss */
 #footer-container {
   padding: 30px 0 15px;
   color: #b17a04;
@@ -6765,11 +6815,11 @@ table.full {
   background-repeat: no-repeat;
   border-top: 4px solid #cad4a9;
 }
-/* line 396, ../../../compass/scss/main.scss */
+/* line 410, ../../../compass/scss/main.scss */
 #footer-container a {
   color: #202219;
 }
-/* line 400, ../../../compass/scss/main.scss */
+/* line 414, ../../../compass/scss/main.scss */
 #footer-container .links {
   padding: 25px 10px;
 }

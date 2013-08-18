@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load url from future %}
 {% regroup archives by year as year_list %}
-<ul class="disc">
+<ul class="disc tree">
   {% for year in year_list %}
   <li>
     <a title="{% trans "Archives" %} {{ year.grouper }}" rel="archives"

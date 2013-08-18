@@ -63,6 +63,17 @@ img.centered{
     }
 }*/
 
+.button.tertiary{
+    color: #386060;
+    background-color: #CEE8E9;
+    border: 1px solid darken(#CEE8E9, 15%);
+    
+    &:hover, &:focus{
+        background-color: darken(#CEE8E9, 5%);
+        border: 1px solid darken(#CEE8E9, 20%);
+    }
+}
+
 // Ajustements
 .button.secondary{
     color: $white;

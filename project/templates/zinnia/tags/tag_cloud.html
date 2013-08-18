@@ -3,6 +3,6 @@
 <div class="label-cloud {% if tags %}tags{% else %}no-tags{% endif %}">
 {% for tag in tags %}<a href="{% url 'zinnia_tag_detail' tag.name %}"
     title="{% blocktrans count entry_count=tag.count %}{{ entry_count }} entry tagged by {{ tag }}{% plural %}{{ entry_count }} entries tagged by {{ tag }}{% endblocktrans %}"
-    class="button tiny round tag-{{ tag.font_size }}{% if tag.name == context_tag.name %} current{% endif %}">{{ tag }}</a>
+    class="button tertiary tiny round tag-{{ tag.font_size }}{% if tag.name == context_tag.name %} current{% endif %}">{{ tag }}</a>
 {% empty %}<p class="empty">{% trans "No tags yet." %}</p>{% endfor %}
 </div>

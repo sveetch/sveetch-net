@@ -1,7 +1,6 @@
 // Zinnia specific stylesheet
-
-.label-cloud.tags .button {
-    margin: 3px;
+.empty{
+    font-style: italic;
 }
 
 .blog-side-breadcrumbs{
@@ -15,35 +14,73 @@
 .blog-side-bar{
     padding: 0;
     position: relative;
-    background-color: #F8F8F8;
-    border-left: 1px solid #EEEEEE;
-    border-right: 3px solid #EEEEEE;
-    border-top: 1px solid #E6E6E6;
-    border-bottom: 1px solid #E6E6E6;
-    box-shadow: 1px 0 0 white inset;
+    color: #9ca27e;
+    
+    a{
+        color: #386060;
+    }
     
     .widget{
-        padding-bottom: ms(1);
+        margin: 0 10px;
+        padding: 5px;
+        border: 1px solid #cee8e9;
+        background-color: #fdfff5;
+        @include border-radius(6px);
         
         &>*{
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
         
         h3{
-            margin: 0 -3px ms(1) 0;
-            padding: ms(1) 15px;
-            color: #ffffff;
-            font-size: 16px;
+            margin: 0;
+            padding: 5px 8px 7px;
+            font-size: 17px;
+            font-weight: 600;
             line-height: 1;
-            font-weight: 700;
-            background-color: #4D4D4D;
-            border-right: 4px solid #1A1A1A;
+            color: $white;
+            border-top: 1px solid #d0910b;
+            background-color: #d0910b;
+            @include border-radius(4px);
         }
         
         &>.side-nav{
             padding-top: 0;
             padding-bottom: 0;
+            
+            &>li{
+                margin: 0;
+                padding: 7px 0;
+            }
+        }
+        
+        li, p{
+            font-size: 13px;
+        }
+        
+        li+li{
+            border-top: 1px dashed #b9d7d4;
+        }
+        
+        .tree{
+            li{
+                border: 0;
+            }
+        }
+        
+        &+.widget{
+            margin-top: ms(1);
+        }
+        
+        .label-cloud{
+            padding: 10px 0 5px;
+            
+            &.tags{
+                .button{
+                    margin: 3px;
+                    font-weight: 400;
+                }
+            }
         }
     }
 }
@@ -56,7 +93,7 @@
                 font-size: ms(3);
                 
                 a{
-                    color: $black;
+                    color: #386060;
                 }
             }
             .authors{
@@ -69,26 +106,26 @@
         
         .entry-info{
             padding: 10px 0;
-            margin-bottom: 12px;
+            margin: 0 0 12px;
             
             .published:before {
                 content: "\f073"; // icon-calendar
                 margin-right: 5px;
-                color: $successColor;
+                color: #386060;
                 @include font-awesome-icon;
             }
             
             .comments:before {
                 content: "\f075"; // icon-comment
                 margin-right: 5px;
-                color: $successColor;
+                color: #386060;
                 @include font-awesome-icon;
             }
             
             .categories:before {
                 content: "\f02e"; // icon-bookmark
                 margin-right: 5px;
-                color: $successColor;
+                color: #386060;
                 @include font-awesome-icon;
             }
         }
