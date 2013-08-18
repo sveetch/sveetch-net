@@ -9,6 +9,6 @@ Map your flatpages urls
 
 # OR you can hardcode your flatpages here, this is more easy to avoid clash within a big 
 # project with only some flatpages
-urlpatterns = patterns('django.contrib.flatpages.views',
-    url(r'^$', 'flatpage', {'url': '/homepage/'}, name='homepage'),
-) + urlpatterns
+#urlpatterns = patterns('django.contrib.flatpages.views',
+    #url(r'^$', 'flatpage', {'url': '/homepage/'}, name='homepage'),
+#) + urlpatterns
