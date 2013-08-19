@@ -1,0 +1,11 @@
+{% extends "registration/base.html" %}
+{% load crispy_forms_tags autobreadcrumb %}
+
+{% block content %}
+    <div class="row">
+        <div class="six columns centered">
+            <h2><i class="icon-quill"></i> {% current_title_from_breadcrumbs %}</h2>
+            {% crispy form %}
+        </div>
+    </div>
+{% endblock %}

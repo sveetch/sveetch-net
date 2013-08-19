@@ -43,7 +43,7 @@
                 
                 {% if user.is_authenticated %}
                 <div id="auth-menu" class="button small radius split dropdown">
-                    <a href="#foo"><strong><i class="icon-user"></i> {{ user.username }}</strong></a><span></span>
+                    <a href="#"><strong><i class="icon-user"></i> {{ user.username }}</strong></a><span></span>
                     <ul>
                         {% if user.is_staff %}
                             <li><a href="{% url 'admin:index' %}"><i class="icon-cog"></i> {% trans "Django admin" %}</a></li>

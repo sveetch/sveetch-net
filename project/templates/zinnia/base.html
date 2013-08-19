@@ -21,23 +21,6 @@
             <div class="columns nine blog-side-breadcrumbs">
                 {% block breadcrumbs %}<ul class="breadcrumbs">{% zinnia_breadcrumbs %}</ul>{% endblock %}
             </div>
-            <div class="columns three blog-side-tools">
-                {% if user.is_authenticated %}
-                <div class="button expand dropdown">
-                    {% trans "Tools" %}
-                    <ul>
-                        {% if perms.zinnia %}<li>
-                            <a href="{% url 'admin:app_list' 'zinnia' %}" title="{% trans "Dashboard" %}">{% trans "Dashboard" %}</a>
-                        </li>
-                        <li class="divider"></li>{% endif %}
-                        {% if perms.zinnia.add_entry %}<li>
-                            <a href="{% url 'admin:zinnia_entry_add' %}" title="{% trans "Post an entry" %}">{% trans "Post an entry" %}</a>
-                        </li>{% endif %}
-                        {% block admin_tools %}{% endblock %}
-                    </ul>
-                </div>
-                {% endif %}
-            </div>
         </div>
         
         <div class="row">
@@ -47,6 +30,21 @@
             
             <div class="columns three blog-side-bar">
             {% block sidebar %}
+                {% if user.is_authenticated %}
+                <div id="widget-tools" class="widget box">
+                    <h3>{% trans "Tools" %}</h3>
+                    <ul class="side-nav">
+                        {% if perms.zinnia %}<li>
+                            <a href="{% url 'admin:app_list' 'zinnia' %}" title="{% trans "Dashboard" %}">{% trans "Dashboard" %}</a>
+                        </li>{% endif %}
+                        {% if perms.zinnia.add_entry %}<li>
+                            <a href="{% url 'admin:zinnia_entry_add' %}" title="{% trans "Post an entry" %}">{% trans "Post an entry" %}</a>
+                        </li>{% endif %}
+                        {% block admin_tools %}{% endblock %}
+                    </ul>
+                </div>
+                {% endif %}
+                
                 <div id="widget-categories" class="widget box">
                     <h3>{% trans "Categories" %}</h3>
                     {% get_categories %}
