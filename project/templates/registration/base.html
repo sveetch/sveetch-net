@@ -6,4 +6,10 @@
 {% block intro %}{% endblock %}
 {% block breadcrumbs_content %}{% autobreadcrumbs_tag %}{% endblock %}
 
-{% block content %}<h2>{% current_title_from_breadcrumbs %}</h2>{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="six columns centered">
+            {% block registration_content %}<h2>{% current_title_from_breadcrumbs %}</h2>{% endblock %}
+        </div>
+    </div>
+{% endblock %}

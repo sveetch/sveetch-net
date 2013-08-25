@@ -1,0 +1,11 @@
+{% extends "skeleton.html" %}
+{% load autobreadcrumb %}
+
+{% block content %}
+<div class="row">
+    <div class="twelve columns">
+    {% block breadcrumbs %}<ul class="breadcrumbs">{% block breadcrumbs_content %}{% autobreadcrumbs_tag %}{% endblock %}</ul>{% endblock %}
+    {% block content_part %}{% endblock %}
+    </div>
+</div>
+{% endblock %}

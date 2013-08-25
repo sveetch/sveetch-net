@@ -2,25 +2,20 @@
 {% load i18n autobreadcrumb crispy_forms_tags %}
 {% load url from future %}
 
-{% block content %}
-    <div class="row">
-        <div class="five columns centered">
-            <h2><i class="icon-enter"></i> {% current_title_from_breadcrumbs %}</h2>
-            <form method="post" action=".">
-                {% crispy form %}
+{% block registration_content %}
+    <h2><i class="icon-enter"></i> {% current_title_from_breadcrumbs %}</h2>
+    <form method="post" action=".">
+        {% crispy form %}
 
-                <div class="row">
-                    <div class="seven columns">
-                        {% comment %}<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>{% endcomment %}
-                        <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
-                    </div>
-                    <div class="five columns text-right">
-                        <input type="submit" class="submit button" value="{% trans 'Log in' %}" />
-                        <input type="hidden" name="next" value="{{ next }}" />
-                    </div>
-                </div>
-            </form>
-
+        <div class="row">
+            <div class="seven columns">
+                {% comment %}<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>{% endcomment %}
+                <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+            </div>
+            <div class="five columns text-right">
+                <input type="submit" class="submit button" value="{% trans 'Log in' %}" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </div>
         </div>
-    </div>
+    </form>
 {% endblock %}
