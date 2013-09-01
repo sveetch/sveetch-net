@@ -1,0 +1,7 @@
+{% extends "registration/base.html" %}
+{% load crispy_forms_tags autobreadcrumb %}
+
+{% block registration_content %}
+    <h2><i class="icon-user"></i> {% current_title_from_breadcrumbs %}</h2>
+    {% crispy form %}
+{% endblock %}

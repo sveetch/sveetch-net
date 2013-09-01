@@ -6,8 +6,8 @@ INSTALLED_APPS = add_to_tuple(INSTALLED_APPS, 'registration', 'captcha', 'sveeac
 
 # Custom helpers for the "accounts" forms
 REGISTRATION_FORM_HELPER = "project.mods_available.sveeaccounts.crispies.RegistrationFormHelper"
-
 REGISTRATION_LOGIN_HELPER = "project.mods_available.sveeaccounts.crispies.LoginHelper"
+REGISTRATION_USER_EDIT_HELPER = "project.mods_available.sveeaccounts.crispies.UserFormHelper"
 
 """
 Settings for django-registration

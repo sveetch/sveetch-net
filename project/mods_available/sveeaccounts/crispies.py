@@ -61,3 +61,52 @@ def RegistrationFormHelper():
     )
     
     return helper
+
+def UserFormHelper():
+    """
+    Helper for the user edit form
+    """
+    helper = FormHelper()
+    helper.form_action = '.'
+    helper.layout = Layout(
+        Fieldset(
+            _('identity'),
+            Row(
+                Column(
+                    'email',
+                    css_class='twelve'
+                ),
+            ),
+            Row(
+                Column(
+                    'first_name',
+                    css_class='six'
+                ),
+                Column(
+                    'last_name',
+                    css_class='six'
+                ),
+            ),
+        ),
+        Fieldset(
+            _('password'),
+            Row(
+                Column(
+                    'new_password1',
+                    css_class='twelve'
+                ),
+                Column(
+                    'new_password2',
+                    css_class='twelve'
+                ),
+            ),
+        ),
+        Row(
+            Column(
+                ButtonHolder( Submit('submit', _('Submit')), css_class="text-right" ),
+                css_class='twelve'
+            ),
+        )
+    )
+    
+    return helper

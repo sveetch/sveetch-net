@@ -24,3 +24,5 @@
 
 # project db
 *.sqlite3
+
+project/settings_production.py
