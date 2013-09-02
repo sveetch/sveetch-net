@@ -1,5 +1,17 @@
 
-.PHONY: help buildout assets scss install delpyc clean
+.PHONY: help buildout assets scss install sync delpyc clean
+
+# Define environment arguments
+BUILDOUTARGS=
+SETTINGSARGS=project.settings
+ifdef PROD
+BUILDOUTARGS=-c production.cfg
+SETTINGSARGS=project.settings_production
+endif
+ifdef DEV
+BUILDOUTARGS=-c development.cfg
+SETTINGSARGS=project.settings_development
+endif
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -19,16 +31,20 @@ scss:
 	compass compile -c compass/config.rb compass/
 
 assets:
-	django-instance assets build --pythonpath=project/
-	django-instance collectstatic --pythonpath=project/ --noinput
+	django-instance collectstatic --pythonpath=project/ --noinput --settings=$(SETTINGSARGS)
+	django-instance assets build --pythonpath=project/ --settings=$(SETTINGSARGS)
 
 install:
 	pip install --upgrade setuptools
+	mkdir eggs
 	python bootstrap.py
-	buildout -v
-	compass compile -c compass/config.rb compass/
-	django-instance syncdb --all --settings=project.settings
-	django-instance migrate --fake --settings=project.settings
+	buildout -v $(BUILDOUTARGS)
+	chmod 0777 project/static
+	chmod 0777 project/media
+
+sync:
+	django-instance syncdb --all --settings=$(SETTINGSARGS)
+	django-instance migrate --fake --settings=$(SETTINGSARGS)
 
 ###########################################################################
 # Private interface

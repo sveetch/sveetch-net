@@ -1,0 +1,50 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@${VARS:MAIN_DOMAIN}
+        ServerName ${VARS:MAIN_DOMAIN}
+        ServerAlias www.${VARS:MAIN_DOMAIN}
+
+
+        DocumentRoot ${buildout:directory}
+
+        <Directory ${buildout:directory}>
+            Options ExecCGI FollowSymLinks
+            AllowOverride AuthConfig Indexes Limit
+            Order allow,deny
+            Allow from all
+
+            AddHandler fcgid-script .fcgi
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ bin/django-instance.fcgi/$1 [QSA,L]
+        </Directory>
+
+        Alias /robots.txt "${buildout:directory}/project/static/robots.txt"
+        <Location "/robots.txt">
+            SetHandler None
+        </Location>
+
+        Alias /favicon.ico "${buildout:directory}/project/static/favicon.ico"
+        <Location "/favicon.ico">
+            SetHandler None
+        </Location>
+
+        Alias /media/ "${buildout:directory}/project/media/"
+        <Location "/media/">
+            SetHandler None
+        </Location>
+        
+        Alias /static/ "${buildout:directory}/project/static/"
+        <Location "/static/">
+            SetHandler None
+        </Location>
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel info
+
+        Setenv VLOG /var/log/apache2/${VARS:NAME}.access.log
+        CustomLog /var/log/apache2/${VARS:NAME}.access.log combined
+        ErrorLog  /var/log/apache2/${VARS:NAME}.error.log
+
+        ServerSignature On
+</VirtualHost>

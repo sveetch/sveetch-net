@@ -17,22 +17,50 @@ Install
 
 This project is made to be build with `buildout`_ system in a `virtualenv`_ environment. 
 
-But there is also a ``requirements.txt`` file than you can use with `virtualenv`_ + `pip`_. This document will only treat about the `buildout`_ way.
+So first you have to install `virtualenv`_ on your system, then you will need some `Devel libraries`_ on your system to compile some modules thereafter with `buildout`_.
 
-So to start, clone the project where you want then enter it and type that : ::
+To start, clone the project where you want then enter it and initialize the environment : ::
 
     virtualenv --no-site-packages --setuptools .
     source bin/activate
 
-Sometime, your `setuptools`_ installation on your system is too old (<0.8), if you don't know about it just upgrade it (at this point you should be in your virtual environment so there are no risk for your system) : ::
+Then for a quick test install :
 
-    pip install --upgrade setuptools
+    make install
 
-*TODO: infos about needed devel libs to build Pillow and psycopg2.*
+Or for a production install (Apache+fcgid) :
 
-Then you can start to install the apps : ::
+    make install PROD=1
 
-    python bootstrap.py
-    buildout -v
+If success, you will have to synchronize database :
 
-*TODO: infos for the project settings and the database*
+    make sync
+
+And for production you also to do this :
+
+    make assets
+
+Also in for production you will need to edit the ``project/settings_production.py`` to fit your database access and SMTP host, if you target to publish the site with Apache2+fcgid there is a ``etc/apache.cfg`` ready to use.
+
+Devel libraries
+***************
+
+This is the devel libraries needed to compile some Python libraries, note that the package name can differ for your distribution.
+
+For psycopg2 (a Postgresl driver for Python)
+--------------------------------------------
+
+* libpq
+* python
+
+For Pillow
+----------
+
+* libjpeg
+* zlib
+* libfreetype
+
+No buildout
+***********
+
+There is also a ``requirements.txt`` file than you can use with `virtualenv`_ + `pip`_. This document will only treat about the `buildout`_ way.
