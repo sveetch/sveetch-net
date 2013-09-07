@@ -40,7 +40,7 @@ And for production you also to do this :
 
     make assets
 
-Also in for production you will need to edit the ``project/settings_production.py`` to fit your database access and SMTP host, if you target to publish the site with Apache2+fcgid there is a ``etc/apache.cfg`` ready to use.
+Also in production you will need to edit the ``project/settings_production.py`` to fit your database access and SMTP host, if you target to publish the site with **Apache2+fcgid** there is a ``etc/apache.cfg`` ready to use for your virtual host.
 
 Devel libraries
 ***************
@@ -60,7 +60,7 @@ For Pillow
 * zlib
 * libfreetype
 
-No buildout
-***********
+Without buildout
+****************
 
 There is also a ``requirements.txt`` file than you can use with `virtualenv`_ + `pip`_. This document will only treat about the `buildout`_ way.

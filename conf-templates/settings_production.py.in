@@ -1,11 +1,7 @@
 """
 Settings for production environment
-
-Do not commit this
 """
 from project.settings import *
-
-SITE_ID = 2
 
 DEBUG = False
 
