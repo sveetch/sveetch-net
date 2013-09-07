@@ -36,7 +36,7 @@ If success, you will have to synchronize database :
 
     make sync
 
-And for production you also to do this :
+And for production you also have to do this :
 
     make assets
 

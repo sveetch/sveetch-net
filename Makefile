@@ -36,7 +36,7 @@ assets:
 
 install:
 	pip install --upgrade setuptools
-	mkdir eggs
+	mkdir -p eggs
 	python bootstrap.py
 	buildout -v $(BUILDOUTARGS)
 	chmod 0777 project/static
