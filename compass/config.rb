@@ -1,4 +1,3 @@
-# This is the Compass config
 require 'zurb-foundation'
 
 # Set this to the root of your project when deployed:
