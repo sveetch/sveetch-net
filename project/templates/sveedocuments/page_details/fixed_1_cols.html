@@ -14,6 +14,8 @@
     <li><a href="{% url documents-page-details page_instance.slug %}">{{ page_instance.title }}</a></li>
 {% endblock %}
 
+{% block body_attrs %} class="documents"{% endblock %}
+
 {% block body_id %}doc-id-{{ page_instance.id }}{% endblock %}
 
 {% block content_part %}

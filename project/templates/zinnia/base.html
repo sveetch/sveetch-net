@@ -57,10 +57,10 @@
                     <h3>{% trans "Tags" %}</h3>
                     {% get_tag_cloud %}
                 </div>
-                <div id="widget-recents" class="widget box">
+                {% comment %}<div id="widget-recents" class="widget box">
                     <h3>{% trans "Recent entries" %}</h3>
                     {% get_recent_entries %}
-                </div>
+                </div>{% endcomment %}
                 <div id="widget-archives" class="widget box tree">
                     <h3>{% trans "Archives" %}</h3>
                     {% get_archives_entries_tree %}

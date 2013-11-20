@@ -5,7 +5,16 @@ from project.settings import *
 
 DEBUG = TEMPLATE_DEBUG = True
 ASSETS_DEBUG = True
-INTERNAL_IPS = ()
+INTERNAL_IPS = ('192.168.0.112',)
+
+DATABASES = {
+    'default': {
+        'NAME': 'sveetchnet',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'django',
+        'PASSWORD': 'dj4ng0',
+    }
+}
 
 # SMTP Settings to send Applications emails, configured for debug purpose only
 # $> python -m smtpd -n -c DebuggingServer localhost:1025

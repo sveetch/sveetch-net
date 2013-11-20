@@ -6,6 +6,8 @@
     {% include "sveedocuments/include_css.html" %}
 {% endblock %}
 
+{% block body_attrs %} class="documents"{% endblock %}
+
 {% block content_part %}<h2>{% current_title_from_breadcrumbs %}</h2>
 <ul class="list-tree">
     {% recursetree page_list %}{% spaceless %}

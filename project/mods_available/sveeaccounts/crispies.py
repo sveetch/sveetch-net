@@ -70,7 +70,7 @@ def UserFormHelper():
     helper.form_action = '.'
     helper.layout = Layout(
         Fieldset(
-            _('identity'),
+            _('Identity'),
             Row(
                 Column(
                     'email',
@@ -89,7 +89,7 @@ def UserFormHelper():
             ),
         ),
         Fieldset(
-            _('password'),
+            _('Password'),
             Row(
                 Column(
                     'new_password1',

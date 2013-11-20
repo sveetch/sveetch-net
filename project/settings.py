@@ -188,6 +188,11 @@ LANGUAGES = [
     ('fr', u'Français'),
 ]
 
+# A tuple of directories where Django looks for translation files
+LOCALE_PATHS = (
+    join(PROJECT_PATH, 'locale'),
+)
+
 
 ALLOWED_HOSTS = ['*'] # FIXME Put here the domain names
 

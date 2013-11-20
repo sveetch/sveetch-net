@@ -1,5 +1,4 @@
-{% load i18n autobreadcrumb documents_menus assets %}{% load url from future %}
-<!DOCTYPE html>
+{% load i18n autobreadcrumb documents_menus assets %}{% load url from future %}<!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="fr"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
 <head>{% spaceless %}
@@ -23,7 +22,7 @@
     {% endspaceless %}
 </head>
 
-<body>
+<body{% block body_attrs %}{% endblock %}>
     {% spaceless %}
     <div id="header-container"{% block header_topbar_attrs %} class="contain-to-grid"{% endblock %}>
         <div class="wrap">
