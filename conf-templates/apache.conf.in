@@ -17,6 +17,11 @@
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteRule ^(.*)$ bin/django-instance.fcgi/$1 [QSA,L]
         </Directory>
+        
+        #<Location /tribune>
+            # Include tor ip to deny all of them
+            #Include tor-ip.conf
+        #</Location>
 
         Alias /robots.txt "${buildout:directory}/project/static/robots.txt"
         <Location "/robots.txt">
