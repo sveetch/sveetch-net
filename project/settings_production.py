@@ -18,13 +18,13 @@ FCGI_OPTIONS = {
 # SMTP Settings to send Applications emails
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25
-EMAIL_SUBJECT_PREFIX = '[${VARS:NAME}] '
+EMAIL_SUBJECT_PREFIX = '[sveetch.net] '
 
 # Database access
 DATABASES = {
     'default': {
         'HOST': 'localhost',
-        'NAME': '${VARS:NAME}',
+        'NAME': 'sveetch_net',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': 'sveetch',
         'PASSWORD': '',
