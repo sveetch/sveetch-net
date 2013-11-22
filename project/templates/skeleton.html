@@ -72,11 +72,18 @@
 
     {% spaceless %}
     <div id="footer-container" class="row row-fluid">
-        <div class="row content">
-            <div class="twelve columns text-center">
-                <p id="site-credits">© 2008-{% now "Y" %} Thenon David</p>
-                <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
+        <div class="row content equal-heights">
+            <div class="eight columns text-center equalized-item">
+                <p>{{ SITE.name }} is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
+                <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></p>
             </div>
+            <div class="four columns equalized-item">
+                <p>This site is builded on <a href="https://www.djangoproject.com/">Django</a> with <a href="http://www.python.org/">Python</a> and the layout has been done on <a href="http://foundation.zurb.com/docs/v/3.2.5/">Foundation 3</a> with <a href="http://compass-style.org/">Compass</a>.</p>
+                <p>You can find his <a href="https://github.com/sveetch/sveetch-net">sources on Github</a>.</p>
+            </div>
+            {% comment %}<div class="twelve columns text-center site-credits">
+                <p>© 2008-{% now "Y" %} Thenon David</p>
+            </div>{% endcomment %}
         </div>
     </div>
     {% endspaceless %}

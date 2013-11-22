@@ -6828,8 +6828,9 @@ table.full {
 
 /* line 427, ../../../compass/scss/main.scss */
 #footer-container {
-  padding: 30px 0 15px;
-  color: #b17a04;
+  padding: 10px 0 15px;
+  font-size: 12px;
+  color: #202219;
   background-color: #ebefe0;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dfe5cb), color-stop(100%, #ebefe0));
   background-image: -webkit-linear-gradient(#dfe5cb, #ebefe0);
@@ -6839,11 +6840,51 @@ table.full {
   background-repeat: no-repeat;
   border-top: 4px solid #cad4a9;
 }
-/* line 435, ../../../compass/scss/main.scss */
-#footer-container a {
-  color: #202219;
+/* line 436, ../../../compass/scss/main.scss */
+#footer-container p, #footer-container ul, #footer-container li {
+  font-size: 12px;
 }
-/* line 439, ../../../compass/scss/main.scss */
+/* line 440, ../../../compass/scss/main.scss */
+#footer-container a {
+  color: #b17a04;
+}
+/* line 444, ../../../compass/scss/main.scss */
 #footer-container .links {
   padding: 25px 10px;
+}
+/* line 448, ../../../compass/scss/main.scss */
+#footer-container .equalized-item + .equalized-item {
+  border-left: 1px solid #CCCCCC;
+}
+/* line 451, ../../../compass/scss/main.scss */
+#footer-container .equalized-item + .equalized-item:before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #FFFFFF;
+}
+/* line 462, ../../../compass/scss/main.scss */
+#footer-container .equalized-item + .equalized-item *:last-child {
+  margin-bottom: 0;
+}
+/* line 467, ../../../compass/scss/main.scss */
+#footer-container .site-credits {
+  margin-top: 10px;
+  padding: 15px 5px 0;
+  border-top: 1px solid #CCCCCC;
+}
+/* line 472, ../../../compass/scss/main.scss */
+#footer-container .site-credits:before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #FFFFFF;
 }
