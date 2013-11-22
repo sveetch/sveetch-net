@@ -22,6 +22,51 @@ def LoginHelper():
     
     return helper
 
+def PasswordResetFormHelper():
+    """
+    Simple helper for the password reset form
+    """
+    helper = FormHelper()
+    helper.layout = Layout(
+        Row(
+            Column(
+                'email',
+                css_class='twelve'
+            ),
+        ),
+        Row(
+            Column(
+                Submit('submit', _('Submit')),
+                css_class='twelve text-right'
+            ),
+        )
+    )
+    
+    return helper
+
+def PasswordResetChangeFormHelper():
+    """
+    Simple helper for the login form
+    """
+    helper = FormHelper()
+    helper.layout = Layout(
+        Row(
+            Column(
+                'new_password1',
+                'new_password2',
+                css_class='twelve'
+            ),
+        ),
+        Row(
+            Column(
+                Submit('submit', _('Submit')),
+                css_class='twelve text-right'
+            ),
+        )
+    )
+    
+    return helper
+
 def RegistrationFormHelper():
     """
     Helper for the user registration form

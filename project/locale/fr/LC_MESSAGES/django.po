@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-20 12:11+0100\n"
+"POT-Creation-Date: 2013-11-22 00:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr "Changer le mot de passe"
 #: mods_available/admin_tools/dashboard.py:28
 #: templates/comments/zinnia/entry/form.html:20
 msgid "Log out"
-msgstr "Déconnexion"
+msgstr "Se déconnecter"
 
 #: mods_available/admin_tools/dashboard.py:34
 #: mods_available/admin_tools/menu.py:20
@@ -57,16 +57,18 @@ msgstr ""
 msgid "Filebrowser"
 msgstr ""
 
-#: mods_available/sveeaccounts/crispies.py:57
-#: mods_available/sveeaccounts/crispies.py:106
+#: mods_available/sveeaccounts/crispies.py:39
+#: mods_available/sveeaccounts/crispies.py:62
+#: mods_available/sveeaccounts/crispies.py:102
+#: mods_available/sveeaccounts/crispies.py:151
 msgid "Submit"
 msgstr "Soumettre"
 
-#: mods_available/sveeaccounts/crispies.py:73
+#: mods_available/sveeaccounts/crispies.py:118
 msgid "Identity"
 msgstr "Identité"
 
-#: mods_available/sveeaccounts/crispies.py:92
+#: mods_available/sveeaccounts/crispies.py:137
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -103,8 +105,8 @@ msgid ""
 "The server encountered an internal server error or misconfiguration and was "
 "unable to complete your request."
 msgstr ""
-"Le serveur à rencontrée une erreur interne ou une mauvaise configuration "
-"et est incapable d'accéder à votre requête."
+"Le serveur à rencontrée une erreur interne ou une mauvaise configuration et "
+"est incapable d'accéder à votre requête."
 
 #: templates/skeleton.html:38
 msgid "Weblog"
@@ -128,13 +130,13 @@ msgstr "Gestion des documents"
 
 #: templates/skeleton.html:53
 msgid "Logout"
-msgstr "Déconnexion"
+msgstr "Se déconnecter"
 
 #: templates/skeleton.html:58
 msgid "Login"
-msgstr "Connexion"
+msgstr "S'authentifier"
 
-#: templates/skeleton.html:60 templates/registration/login.html:14
+#: templates/skeleton.html:60 templates/registration/login.html:12
 msgid "Register"
 msgstr "S'inscrire"
 
@@ -173,13 +175,33 @@ msgstr "Envoyer"
 msgid "Preview"
 msgstr "Prévisualisation"
 
-#: templates/registration/login.html:14
+#: templates/registration/login.html:12
 msgid "Not member"
-msgstr ""
+msgstr "Non inscrit"
 
-#: templates/registration/login.html:17
+#: templates/registration/login.html:13
+msgid "Lost password"
+msgstr "Mot de passe perdu"
+
+#: templates/registration/login.html:18
 msgid "Log in"
-msgstr "Connexion"
+msgstr "S'authentifier"
+
+#: templates/registration/password_reset_complete.html:7
+msgid "Password reset successfully."
+msgstr "Changement de mot de passe réussi."
+
+#: templates/registration/password_reset_complete.html:9
+msgid "Now you can Log in"
+msgstr "Maintenant vous pouvez vous authentifier"
+
+#: templates/registration/password_reset_confirm.html:9
+msgid "Password reset failed."
+msgstr "Échec du changement de mot de passe."
+
+#: templates/registration/password_reset_done.html:6
+msgid "Email with password reset instructions has been sent."
+msgstr "Un email vous a été envoyé avec un lien de confirmation."
 
 #: templates/sveedocuments/board/subbase.html:15
 msgid "Summary"
@@ -254,16 +276,16 @@ msgstr "Dernière mise à jour le"
 
 #: templates/zinnia/_entry_detail_base.html:98 templates/zinnia/base.html:57
 msgid "Tags"
-msgstr ""
+msgstr "Étiquettes"
 
 #: templates/zinnia/_entry_detail_base.html:101
 #, python-format
 msgid "Show all entries tagged by %(tag)s"
-msgstr "Voir toute les entrées taggués en %(tag)s"
+msgstr "Voir toute les entrées étiquetées en %(tag)s"
 
 #: templates/zinnia/_entry_detail_base.html:104
 msgid "No tags"
-msgstr "Aucun tag"
+msgstr "Aucun étiquette"
 
 #: templates/zinnia/base.html:11
 msgid "RSS Feed of latest entries"
@@ -289,11 +311,7 @@ msgstr "Catégories"
 msgid "Authors"
 msgstr "Auteurs"
 
-#: templates/zinnia/base.html:61
-msgid "Recent entries"
-msgstr "Entrées récentes"
-
-#: templates/zinnia/base.html:65
+#: templates/zinnia/base.html:66
 #: templates/zinnia/tags/archives_entries_tree.html:7
 #: templates/zinnia/tags/archives_entries_tree.html:14
 #: templates/zinnia/tags/archives_entries_tree.html:24
@@ -353,7 +371,7 @@ msgstr "la catégorie"
 
 #: templates/zinnia/entry_list.html:5
 msgid "the tag"
-msgstr "le tag"
+msgstr "l'étiquette"
 
 #: templates/zinnia/entry_list.html:5
 msgid "the author"
@@ -387,17 +405,17 @@ msgstr ""
 #: templates/zinnia/entry_list.html:28
 #, python-format
 msgid "Category archives: %(category)s"
-msgstr "Archives de la catégorie: %(category)s"
+msgstr "Archives de la catégorie&nbsp;: %(category)s"
 
 #: templates/zinnia/entry_list.html:35
 #, python-format
 msgid "Tag archives: %(tag)s"
-msgstr "Archives du tag: %(tag)s"
+msgstr "Archives de l'étiquette&nbsp;: %(tag)s"
 
 #: templates/zinnia/entry_list.html:39
 #, python-format
 msgid "Author archives: %(author)s"
-msgstr "Archives de l'auteur: %(author)s"
+msgstr "Archives de l'auteur&nbsp;: %(author)s"
 
 #: templates/zinnia/entry_list.html:49
 #: templates/zinnia/tags/recent_entries.html:9
@@ -410,7 +428,7 @@ msgstr "Éditer la catégorie"
 
 #: templates/zinnia/entry_list.html:74 templates/zinnia/entry_list.html:75
 msgid "Edit the tag"
-msgstr "Éditer le tag"
+msgstr "Éditer l'étiquette"
 
 #: templates/zinnia/entry_list.html:81 templates/zinnia/entry_list.html:82
 msgid "Edit the author"
@@ -454,9 +472,9 @@ msgstr "Plus d'anciennes entrées"
 #, python-format
 msgid "%(entry_count)s entry tagged by %(tag)s"
 msgid_plural "%(entry_count)s entries tagged by %(tag)s"
-msgstr[0] "%(entry_count)s entrée tagguée avec %(tag)s"
-msgstr[1] "%(entry_count)s entrées tagguées avec %(tag)s"
+msgstr[0] "%(entry_count)s entrée étiquetée avec %(tag)s"
+msgstr[1] "%(entry_count)s entrées étiquetées avec %(tag)s"
 
 #: templates/zinnia/tags/tag_cloud.html:7
 msgid "No tags yet."
-msgstr "Aucun tag."
+msgstr "Aucune étiquette."

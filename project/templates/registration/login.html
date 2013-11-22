@@ -8,9 +8,10 @@
         {% crispy form %}
 
         <div class="row">
-            <div class="seven columns">
-                {% comment %}<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>{% endcomment %}
+            <div class="seven columns sub-mention">
                 <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+                <p><a href="{% url 'auth_password_reset' %}">{% trans "Lost password" %}?</a></p>
+                {% comment %}<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>{% endcomment %}
             </div>
             <div class="five columns text-right">
                 <input type="submit" class="submit button" value="{% trans 'Log in' %}" />

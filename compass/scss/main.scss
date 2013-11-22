@@ -396,9 +396,29 @@ fieldset{
         margin-left: ms(0) / 2;
     }
 }
-
+// Force table to 100% width
 table.full{
     width: 100%;
+}
+
+//
+.alert-box{
+    a{
+        color: $white;
+        text-decoration: underline;
+    }
+    
+    p{
+        margin: 0;
+        
+        &+p{
+            margin-top: 10px;
+        }
+    }
+    
+    &.medium{
+        padding: 14px 15px 15px;
+    }
 }
 
 // *****

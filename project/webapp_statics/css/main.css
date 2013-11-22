@@ -6808,7 +6808,25 @@ table.full {
   width: 100%;
 }
 
-/* line 407, ../../../compass/scss/main.scss */
+/* line 406, ../../../compass/scss/main.scss */
+.alert-box a {
+  color: white;
+  text-decoration: underline;
+}
+/* line 411, ../../../compass/scss/main.scss */
+.alert-box p {
+  margin: 0;
+}
+/* line 414, ../../../compass/scss/main.scss */
+.alert-box p + p {
+  margin-top: 10px;
+}
+/* line 419, ../../../compass/scss/main.scss */
+.alert-box.medium {
+  padding: 14px 15px 15px;
+}
+
+/* line 427, ../../../compass/scss/main.scss */
 #footer-container {
   padding: 30px 0 15px;
   color: #b17a04;
@@ -6821,11 +6839,11 @@ table.full {
   background-repeat: no-repeat;
   border-top: 4px solid #cad4a9;
 }
-/* line 415, ../../../compass/scss/main.scss */
+/* line 435, ../../../compass/scss/main.scss */
 #footer-container a {
   color: #202219;
 }
-/* line 419, ../../../compass/scss/main.scss */
+/* line 439, ../../../compass/scss/main.scss */
 #footer-container .links {
   padding: 25px 10px;
 }
