@@ -30,7 +30,7 @@ $screenMediumLow: 1024px;
     max-width: 100%;
     min-width: 0;
     @extend %clearfix;
-    padding: 0 ($columnGutter/2);
+    padding: 0;
 }
 .row.content{
     width: $rowWidth;

@@ -188,6 +188,15 @@ $header-border-top: 10px;
     @include background-image(linear-gradient(#dff4f5, #f1fadf 241px, #f7fbda 337px, #f8fce1 424px, #f8fcee 530px, #f7fcf8));
     background-repeat: no-repeat;
     
+    @media (max-width: $screenSmall - 1) {
+        h1 { font-size: ms(5)/1.5; }
+        h2 { font-size: ms(4)/1.5; }
+        h3 { font-size: ms(3)/1.5; }
+        h4 { font-size: ms(2)/1.5; }
+        h5 { font-size: ms(1)/1.5; }
+        h6 { font-size: ms(0)/1.5; }
+    }
+    
     &.spaced{
         margin-top: 15px;
         margin-bottom: 15px;
@@ -289,6 +298,44 @@ $header-border-top: 10px;
     }
     .content-part{
         padding-top: 10px;
+    }
+    
+    @media (max-width: $screenSmall - 1) {
+        #djangotribune-container{
+            &>.columns{
+                padding: 0 2px;
+                
+                &>h2{
+                    display: none;
+                }
+            }
+            
+            .djangotribune{
+                .messages{
+                    .message{
+                        margin: 5px 3px 5px 0;
+                        padding: 0 0 0 2px;
+                        font-size: 13px;
+                        border-left: 3px solid transparent;
+                        
+                        span.clock{
+                            border-left: none;
+                            padding: 3px 0 0 0;
+                        }
+                        &.owned span.clock{
+                            border-left: none;
+                            border-bottom: 1px solid #FF0000;
+                        }
+                        &.answer{
+                            border-left: 3px solid #2BA6CB;
+                            .marker{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     // Content introduction merged with the header
@@ -432,6 +479,9 @@ table.full{
     @include background-image(linear-gradient(#dfe5cb, #ebefe0));
     background-repeat: no-repeat;
     border-top: 4px solid darken(#dfe5cb, 10%);
+    @media (max-width: $screenSmall - 1) {
+        display: none;
+    }
     
     p, ul, li{
         font-size: 12px;

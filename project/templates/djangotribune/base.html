@@ -2,7 +2,7 @@
 {% load autobreadcrumb %}
 
 {% block content %}
-<div class="row">
+<div class="row" id="djangotribune-container">
     <div class="twelve columns">
     {% block breadcrumbs %}<ul class="breadcrumbs">{% block breadcrumbs_content %}{% autobreadcrumbs_tag %}{% endblock %}</ul>{% endblock %}
     {% block content_part %}{% endblock %}

@@ -26,10 +26,10 @@
         
         {% block entry-info %}
         <div class="row entry-info">
-            <div class="three columns published" title="{{ object.creation_date|date:"c" }}">{{ object.creation_date|date:"DATE_FORMAT" }}</div>
+            <div class="four columns published" title="{{ object.creation_date|date:"c" }}">{{ object.creation_date|date:"DATE_FORMAT" }}</div>
             {% with categories=object.categories.all %}
             {% if categories|length %}
-            <div class="three columns comments">{% with comment_count=object.comment_count %}
+            <div class="four columns comments">{% with comment_count=object.comment_count %}
             {% if comment_count %}
                 <a href="{{ object.get_absolute_url }}#comments"
                     title="{% blocktrans with object=object.title %}Comments on {{ object }}{% endblocktrans %}">
@@ -43,7 +43,7 @@
                 {% endif %}
             {% endif %}
             {% endwith %}</div>
-            <div class="six columns categories">{% for category in categories %}
+            <div class="four columns categories">{% for category in categories %}
                 <a href="{{ category.get_absolute_url }}"
                     title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
                     rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}{% endwith %}
