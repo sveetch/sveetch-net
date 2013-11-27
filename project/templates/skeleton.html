@@ -54,7 +54,7 @@
                 </div>
                 {% else %}
                 <div id="auth-menu" class="button small radius split dropdown">
-                    <a href="{% url 'auth_login' %}"><i class="icon-enter"></i> {% trans "Login" %}</a><span></span>
+                    <a href="{% url 'auth_login' %}?next={{ request.path }}"><i class="icon-enter"></i> {% trans "Login" %}</a><span></span>
                     <ul>
                         <li><a href="{% url 'registration_register' %}"><i class="icon-quill"></i> {% trans "Register" %}</a></li>
                     </ul>
