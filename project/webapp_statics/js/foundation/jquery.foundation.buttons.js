@@ -33,6 +33,12 @@
           button = $el.closest('.button.dropdown'),
           dropdown = $('> ul', button);
           
+        // let ".no-reset-click" elements to act by default to prevent dropdown closing
+        if($(e.target).hasClass('no-reset-click')){
+          e.stopPropagation();
+          return true;
+        }
+        
         // If the click is registered on an actual link or on button element then do not preventDefault which stops the browser from following the link
         if ($.inArray(e.target.nodeName, ['A', 'BUTTON'])){
           e.preventDefault();
