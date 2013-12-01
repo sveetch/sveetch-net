@@ -6419,42 +6419,7 @@ hr.big {
 #content-container .content-part {
   padding-top: 10px;
 }
-@media (max-width: 767px) {
-  /* line 305, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container > .columns {
-    padding: 0 2px;
-  }
-  /* line 308, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container > .columns > h2 {
-    display: none;
-  }
-  /* line 315, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container .djangotribune .messages .message {
-    margin: 5px 3px 5px 0;
-    padding: 0 0 0 2px;
-    font-size: 13px;
-    border-left: 3px solid transparent;
-  }
-  /* line 321, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container .djangotribune .messages .message span.clock {
-    border-left: none;
-    padding: 3px 0 0 0;
-  }
-  /* line 325, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container .djangotribune .messages .message.owned span.clock {
-    border-left: none;
-    border-bottom: 1px solid #FF0000;
-  }
-  /* line 329, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container .djangotribune .messages .message.answer {
-    border-left: 3px solid #2BA6CB;
-  }
-  /* line 331, ../../../compass/scss/main.scss */
-  #content-container #djangotribune-container .djangotribune .messages .message.answer .marker {
-    display: none;
-  }
-}
-/* line 342, ../../../compass/scss/main.scss */
+/* line 304, ../../../compass/scss/main.scss */
 #content-container #content-intro {
   background-color: #9dcd78;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9dcd78), color-stop(98%, #99cb72), color-stop(100%, #639938));
@@ -6464,13 +6429,13 @@ hr.big {
   background-image: linear-gradient(#9dcd78, #99cb72 98%, #639938);
   padding: 25px 0;
 }
-/* line 348, ../../../compass/scss/main.scss */
+/* line 310, ../../../compass/scss/main.scss */
 #content-container #content-intro div, #content-container #content-intro dl, #content-container #content-intro dt, #content-container #content-intro dd, #content-container #content-intro ul, #content-container #content-intro ol, #content-container #content-intro li, #content-container #content-intro h1, #content-container #content-intro h2, #content-container #content-intro h3, #content-container #content-intro h4, #content-container #content-intro h5, #content-container #content-intro h6, #content-container #content-intro pre, #content-container #content-intro form, #content-container #content-intro p, #content-container #content-intro blockquote, #content-container #content-intro th, #content-container #content-intro td {
   font-size: 24px;
   color: white;
   text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0;
 }
-/* line 353, ../../../compass/scss/main.scss */
+/* line 315, ../../../compass/scss/main.scss */
 #content-container #content-intro a {
   color: #305A13;
 }
@@ -6792,35 +6757,46 @@ hr.big {
   border-color: #99B7B4;
 }
 
-/* line 367, ../../../compass/scss/main.scss */
+@media (max-width: 767px) {
+  /* line 4, ../../../compass/scss/components/_djangotribune.scss */
+  #djangotribune-container > .columns {
+    padding: 0 2px;
+  }
+  /* line 7, ../../../compass/scss/components/_djangotribune.scss */
+  #djangotribune-container > .columns > h2 {
+    display: none;
+  }
+}
+
+/* line 328, ../../../compass/scss/main.scss */
 #djangocodemirror-sample {
   width: auto !important;
 }
 
-/* line 374, ../../../compass/scss/main.scss */
+/* line 332, ../../../compass/scss/main.scss */
 body.documents #content-container {
   padding-bottom: 30px;
 }
 
-/* line 379, ../../../compass/scss/main.scss */
+/* line 336, ../../../compass/scss/main.scss */
 select {
   box-shadow: none;
 }
 
-/* line 386, ../../../compass/scss/main.scss */
+/* line 342, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox label {
   display: inline;
 }
-/* line 389, ../../../compass/scss/main.scss */
+/* line 345, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox span.custom.checkbox {
   cursor: pointer;
 }
-/* line 392, ../../../compass/scss/main.scss */
+/* line 348, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox span.custom.checkbox.checked:before {
   cursor: pointer;
 }
 
-/* line 398, ../../../compass/scss/main.scss */
+/* line 354, ../../../compass/scss/main.scss */
 fieldset {
   padding: 12px 12px;
   background-color: #FCFCFC;
@@ -6828,66 +6804,72 @@ fieldset {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* line 406, ../../../compass/scss/main.scss */
+/* line 362, ../../../compass/scss/main.scss */
 fieldset legend, fieldset label {
   font-size: 16px;
   background-color: transparent;
 }
-/* line 412, ../../../compass/scss/main.scss */
+/* line 368, ../../../compass/scss/main.scss */
 fieldset .row + .row {
   margin-top: 12px;
 }
 
-/* line 419, ../../../compass/scss/main.scss */
+/* line 375, ../../../compass/scss/main.scss */
 .row .datetimesplit .row {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 423, ../../../compass/scss/main.scss */
+/* line 379, ../../../compass/scss/main.scss */
 .datetimesplit .dateinput {
   float: left;
   width: 49.5%;
 }
-/* line 427, ../../../compass/scss/main.scss */
+/* line 383, ../../../compass/scss/main.scss */
 .datetimesplit .timeinput {
   float: right;
   width: 49.5%;
 }
 
-/* line 438, ../../../compass/scss/main.scss */
+/* line 395, ../../../compass/scss/main.scss */
+input.postfix.button[type="submit"],
+input.postfix.medium.button[type="submit"] {
+  font-size: 13px;
+}
+
+/* line 400, ../../../compass/scss/main.scss */
 .buttonHolder {
   text-align: right;
 }
-/* line 442, ../../../compass/scss/main.scss */
+/* line 404, ../../../compass/scss/main.scss */
 .buttonHolder input.button + input.button,
 .buttonHolder button + button {
   margin-left: 7.5px;
 }
 
-/* line 447, ../../../compass/scss/main.scss */
+/* line 409, ../../../compass/scss/main.scss */
 table.full {
   width: 100%;
 }
 
-/* line 453, ../../../compass/scss/main.scss */
+/* line 415, ../../../compass/scss/main.scss */
 .alert-box a {
   color: white;
   text-decoration: underline;
 }
-/* line 458, ../../../compass/scss/main.scss */
+/* line 420, ../../../compass/scss/main.scss */
 .alert-box p {
   margin: 0;
 }
-/* line 461, ../../../compass/scss/main.scss */
+/* line 423, ../../../compass/scss/main.scss */
 .alert-box p + p {
   margin-top: 10px;
 }
-/* line 466, ../../../compass/scss/main.scss */
+/* line 428, ../../../compass/scss/main.scss */
 .alert-box.medium {
   padding: 14px 15px 15px;
 }
 
-/* line 474, ../../../compass/scss/main.scss */
+/* line 436, ../../../compass/scss/main.scss */
 #footer-container {
   padding: 10px 0 15px;
   font-size: 12px;
@@ -6901,29 +6883,29 @@ table.full {
   background-repeat: no-repeat;
   border-top: 4px solid #cad4a9;
 }
-@media (max-width: 767px) {
-  /* line 474, ../../../compass/scss/main.scss */
+@media (max-width: 1023px) {
+  /* line 436, ../../../compass/scss/main.scss */
   #footer-container {
     display: none;
   }
 }
-/* line 486, ../../../compass/scss/main.scss */
+/* line 448, ../../../compass/scss/main.scss */
 #footer-container p, #footer-container ul, #footer-container li {
   font-size: 12px;
 }
-/* line 490, ../../../compass/scss/main.scss */
+/* line 452, ../../../compass/scss/main.scss */
 #footer-container a {
   color: #b17a04;
 }
-/* line 494, ../../../compass/scss/main.scss */
+/* line 456, ../../../compass/scss/main.scss */
 #footer-container .links {
   padding: 25px 10px;
 }
-/* line 498, ../../../compass/scss/main.scss */
+/* line 460, ../../../compass/scss/main.scss */
 #footer-container .equalized-item + .equalized-item {
   border-left: 1px solid #CCCCCC;
 }
-/* line 501, ../../../compass/scss/main.scss */
+/* line 463, ../../../compass/scss/main.scss */
 #footer-container .equalized-item + .equalized-item:before {
   content: "";
   display: block;
@@ -6934,17 +6916,17 @@ table.full {
   bottom: 0;
   border-left: 1px solid #FFFFFF;
 }
-/* line 512, ../../../compass/scss/main.scss */
+/* line 474, ../../../compass/scss/main.scss */
 #footer-container .equalized-item + .equalized-item *:last-child {
   margin-bottom: 0;
 }
-/* line 517, ../../../compass/scss/main.scss */
+/* line 479, ../../../compass/scss/main.scss */
 #footer-container .site-credits {
   margin-top: 10px;
   padding: 15px 5px 0;
   border-top: 1px solid #CCCCCC;
 }
-/* line 522, ../../../compass/scss/main.scss */
+/* line 484, ../../../compass/scss/main.scss */
 #footer-container .site-credits:before {
   content: "";
   display: block;

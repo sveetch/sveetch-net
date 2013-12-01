@@ -1,0 +1,12 @@
+// Django-tribune specific stylesheet
+#djangotribune-container{
+    @media (max-width: $screenSmall - 1) {
+        &>.columns{
+            padding: 0 2px;
+            
+            &>h2{
+                display: none;
+            }
+        }
+    }
+}
