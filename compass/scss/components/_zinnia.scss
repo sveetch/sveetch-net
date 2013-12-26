@@ -109,21 +109,21 @@
             margin: 0 0 12px;
             
             .published:before {
-                content: "\f073"; // icon-calendar
+                content: "\e60f"; // icon-calendar
                 margin-right: 5px;
                 color: #386060;
                 @include font-awesome-icon;
             }
             
             .comments:before {
-                content: "\f075"; // icon-comment
+                content: "\e609"; // icon-bubble
                 margin-right: 5px;
                 color: #386060;
                 @include font-awesome-icon;
             }
             
             .categories:before {
-                content: "\f02e"; // icon-bookmark
+                content: "\e613"; // icon-bookmark
                 margin-right: 5px;
                 color: #386060;
                 @include font-awesome-icon;
@@ -140,7 +140,7 @@
         
         .continue-reading{
             .button:after{
-                content: "\f0da"; // icon-caret-right
+                content: "\e616"; // icon-caret-right
                 margin-left: 5px;
                 color: inherit;
                 @include font-awesome-icon;

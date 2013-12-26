@@ -21,7 +21,7 @@
  *  Work: Lead Product Designer @ http://kyruus.com
  */
 
-$fontAwesomePath:   "../fonts" !default;
+$icomoonPath:   "../fonts" !default;
 $borderColor:       #eee;
 $iconMuted:         #eee;
 @mixin border-radius($radius) { -webkit-border-radius: $radius; -moz-border-radius: $radius; border-radius: $radius; }
@@ -29,7 +29,7 @@ $iconMuted:         #eee;
 /*  Font Awesome styles
     ------------------------------------------------------- */
 @mixin font-awesome-icon() {
-  font-family: FontAwesome;
+  font-family: 'icomoon';
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;

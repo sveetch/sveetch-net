@@ -51,7 +51,7 @@
 // Media Queries Overrides
 @import "foundation/components/modules/mqueries";
 
-@import "components/font-awesome";
+@import "components/icomoon";
 @import "components/lifted-corners";
 @import "commons/utils";
 @import "commons/addons";
@@ -212,8 +212,8 @@ $header-border-top: 10px;
             display: inline-block;
             width: 1.75em;
             text-align: left;
-            content: "\f0e8";
-            font-family: FontAwesome;
+            content: "\e60e"; // icon-sitemap
+            font-family: 'icomoon';
             font-weight: normal;
             font-style: normal;
             text-decoration: inherit;

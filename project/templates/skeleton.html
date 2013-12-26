@@ -36,7 +36,7 @@
                     <ul class="right global-menu">
                         <li class="weblog"><a href="{% url 'zinnia_entry_archive_index' %}"><span class="box3d"><i class="icon-blog"></i></span> {% trans "Weblog" %}</a></li>
                         <li class="documents"><a href="{% url 'documents-index' %}"><span class="box3d"><i class="icon-file"></i></span> {% trans "Documents" %}</a></li>
-                        <li class="tribune"><a href="{% url 'tribune-board' %}"><span class="box3d"><i class="icon-bubbles"></i></span> {% trans "Tribune" %}</a></li>
+                        <li class="tribune"><a href="{% url 'tribune-board' %}"><span class="box3d"><i class="icon-coincoin"></i></span> {% trans "Tribune" %}</a></li>
                     </ul>
                 </section>
                 
@@ -45,7 +45,7 @@
                     <a href="{% url 'auth_user_form' %}"><strong><i class="icon-user"></i> {{ user.username }}</strong></a><span></span>
                     <ul>
                         {% if user.is_staff %}
-                            <li><a href="{% url 'admin:index' %}"><i class="icon-cog"></i> {% trans "Django admin" %}</a></li>
+                            <li><a href="{% url 'admin:index' %}"><i class="icon-darkmoon"></i> {% trans "Django admin" %}</a></li>
                             <li{% currentwalkthroughto 'documents-board' %} class="active"{% endcurrentwalkthroughto %}><a href="{% url 'documents-board' %}"><i class="icon-file"></i> {% trans "Document management" %}</a></li>
                             <li class="divider"></li>
                         {% endif %}
