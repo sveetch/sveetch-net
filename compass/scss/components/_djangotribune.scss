@@ -9,4 +9,31 @@
             }
         }
     }
+    .djangotribune-menu{
+        $button_default: #DFF4F5;
+        li .button{
+            color: darken(($button_default), 25%);
+            background: none repeat scroll 0 0 $button_default;
+            border: 1px solid #9CD8DA;
+            @include box-shadow(0 1px 0 rgba(205, 205, 205, 0.5) inset);
+            
+            &:hover, &:focus {
+                color: darken(($button_default), 35%);
+                background-color: darken(($button_default), 10%);
+            }
+            
+            i{
+                margin-right: .25em;
+            }
+        }    
+        li.active .button{ 
+            @include box-shadow(0 1px 0 $shinyEdge inset);
+            color: $white;
+            background: $mainColor;
+            border: 1px solid darken(($mainColor), 15%);
+            
+            &:hover, &:focus { color: $white; background-color: darken(($mainColor), 10%); }
+            &:active  { @include box-shadow(0 1px 0 $darkEdge inset); }
+        }
+    }
 }

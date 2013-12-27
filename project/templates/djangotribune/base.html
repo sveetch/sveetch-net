@@ -1,10 +1,16 @@
 {% extends "skeleton.html" %}
-{% load autobreadcrumb %}
+{% load i18n autobreadcrumb %}{% load url from future %}
 
 {% block content %}
 <div class="row" id="djangotribune-container">
     <div class="twelve columns">
     {% block breadcrumbs %}<ul class="breadcrumbs">{% block breadcrumbs_content %}{% autobreadcrumbs_tag %}{% endblock %}</ul>{% endblock %}
+        <ul class="inline-list djangotribune-menu">
+            <li{% block djangotribune_menuitem_messages_attrs %}{% endblock %}><a href="{% url 'tribune-board' %}" class="button small"><i class="icon-bubbles"></i>{% trans 'Messages' %}</a></li>
+            <li{% block djangotribune_menuitem_urls_attrs %}{% endblock %}><a href="{% url 'tribune-url-archives' %}" class="button small"><i class="icon-link"></i>{% trans 'Url archives' %}</a></li>
+            <li{% block djangotribune_menuitem_help_attrs %}{% endblock %}><a href="http://djangotribune.readthedocs.org/en/latest/usage.html" class="button small" target="_blank"><i class="icon-question-sign"></i>{% trans 'Help' %}</a></li>
+        </ul>
+
     {% block content_part %}{% endblock %}
     </div>
 </div>
