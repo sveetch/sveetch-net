@@ -14,10 +14,8 @@ $(document).ready(function() {
     // Automatically add "no-reset-click" class on direct input parent label to 
     // follow their natural behavior (to propagate the click to their input child, 
     // usually only for radio or checkbox)
-    $("form .button.dropdown .no-reset-click").each(function(index) {
-        if($(this).parent().prop('nodeName')=='LABEL'){
-            $(this).parent().addClass('no-reset-click');
-        }
+    $("form .button.dropdown label.no-reset-click input").each(function(index) {
+        $(this).addClass('no-reset-click');
     });
     
     //$.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
