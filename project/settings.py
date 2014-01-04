@@ -21,10 +21,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'NAME': 'sveetchnet',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'django',
-        'PASSWORD': 'dj4ng0',
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3',
+        # Database name. Or path to database file if using sqlite3.
+        'NAME': join(PROJECT_PATH, '..', 'database.sqlite3'),
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',               # Empty for localhost through domain sockets
+                                  # or '127.0.0.1' for localhost through TCP.
+        'PORT': '',               # Set to empty string for default.
     }
 }
 
