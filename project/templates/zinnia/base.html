@@ -49,10 +49,10 @@
                     <h3>{% trans "Categories" %}</h3>
                     {% get_categories %}
                 </div>
-                <div id="widget-authors" class="widget box">
+                {% comment %}<div id="widget-authors" class="widget box">
                     <h3>{% trans "Authors" %}</h3>
                     {% get_authors %}
-                </div>
+                </div>{% endcomment %}
                 <div id="widget-tags" class="widget box">
                     <h3>{% trans "Tags" %}</h3>
                     {% get_tag_cloud %}

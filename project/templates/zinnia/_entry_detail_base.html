@@ -1,4 +1,4 @@
-{% load comments i18n %}
+{% load comments i18n thumbnail %}
 {% load url from future %}
 <article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
     {% block entry-header %}
@@ -59,9 +59,11 @@
         {% if object.image %}
         <div class="entry-image right">
             <p class="">
-                {% if continue_reading %}<a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{% endif %}
-                <img src="{{ object.image.url }}" alt="{{ object.title }}">
-                {% if continue_reading %}</a>{% endif %}
+                <a href="{{ object.image.url }}" title="{{ object.title }}" rel="bookmark">
+                {% thumbnail object.image "278x160" crop="center" as im %}
+                    <img src="{{ im.url }}" alt="{{ object.title }}">
+                {% endthumbnail %}
+                </a>
             </p>
         </div>
         {% endif %}

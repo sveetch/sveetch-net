@@ -10,6 +10,7 @@
 /lib64
 /build
 /src
+/local
 
 # buildout
 *.egg-info
