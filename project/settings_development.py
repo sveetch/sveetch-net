@@ -4,7 +4,7 @@ Settings to use for development
 from settings import *
 
 # Enable django-debug-toolbar for the following IPs
-INTERNAL_IPS = ('127.0.0.1',)
+INTERNAL_IPS = ('192.168.0.112',)
 
 # Databases access
 DATABASES = {

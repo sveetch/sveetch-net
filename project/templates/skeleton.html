@@ -9,7 +9,7 @@
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}"/>
     <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}favicon.ico">
 
-    {% block html_base_links %}<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300,300italic,600,400italic,600italic,700,700italic">
+    {% block html_base_links %}<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Grand+Hotel%7COpen+Sans:400,300,300italic,600,400italic,600italic,700,700italic">
     {% assets "main_css" %}
         <link rel="stylesheet" href="{{ ASSET_URL }}">
     {% endassets %}{% endblock %}
@@ -32,13 +32,13 @@
                     <li class="toggle-topbar"><a href="#"></a></li>
                 </ul>
 
-                <section>
+                <div>
                     <ul class="right global-menu">
                         <li class="weblog"><a href="{% url 'zinnia_entry_archive_index' %}"><span class="box3d"><i class="icon-blog"></i></span> {% trans "Weblog" %}</a></li>
                         <li class="documents"><a href="{% url 'documents-index' %}"><span class="box3d"><i class="icon-file"></i></span> {% trans "Documents" %}</a></li>
                         <li class="tribune"><a href="{% url 'tribune-board' %}"><span class="box3d"><i class="icon-coincoin"></i></span> {% trans "Tribune" %}</a></li>
                     </ul>
-                </section>
+                </div>
                 
                 {% if user.is_authenticated %}
                 <div id="auth-menu" class="button small radius split dropdown">

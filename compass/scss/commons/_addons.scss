@@ -16,7 +16,7 @@ $screenMediumLow: 1024px;
 }
 .responsive-right{
     float:none;
-    @media (min-width: $topBarBreakPoint) {
+    @media (min-width: $topBarBreakPoint+1) {
         float:right;
     }
 }

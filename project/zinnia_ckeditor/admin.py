@@ -9,7 +9,7 @@ from zinnia.admin.entry import EntryAdmin
 
 class EntryWithCkeditor(EntryAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget},
+        models.TextField: {'widget': CKEditorWidget(config_name='zinnia')},
     }
 
 # Unregister the default EntryAdmin

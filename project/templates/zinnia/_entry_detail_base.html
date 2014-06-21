@@ -1,11 +1,11 @@
 {% load comments i18n thumbnail %}
 {% load url from future %}
-<article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
+<div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
     {% block entry-header %}
     <div class="entry-header">
         {% block entry-title %}
         <h2 class="entry-title">
-            <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+            <a href="{{ object.get_absolute_url }}" title="{{ object.title }}">
                 {{ object.title }}
             </a>
         </h2>
@@ -15,7 +15,7 @@
                 {% trans "Written by" %}
                 {% for author in authors %}
                     <span class="vcard author">
-                        <a href="{{ author.get_absolute_url }}" class="fn url{% if not author.get_full_name %} nickname{% endif %}" rel="author"
+                        <a href="{{ author.get_absolute_url }}" class="fn url{% if not author.get_full_name %} nickname{% endif %}"
                         title="{% blocktrans %}Show all {{ author }}'s entries{% endblocktrans %}">{{ author.username }}</a></span>{% if not forloop.last %}, {% endif %}
                 {% endfor %}
             </p>
@@ -45,9 +45,10 @@
             {% endwith %}</div>
             <div class="four columns categories">{% for category in categories %}
                 <a href="{{ category.get_absolute_url }}"
-                    title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
-                    rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}{% endwith %}
-            </div>
+                    title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}">
+                    {{ category }}</a>{% if not forloop.last %}, {% endif %}
+            {% endfor %}</div>
+            {% endif %}{% endwith %}
         </div>
         {% endblock %}
     </div>
@@ -57,9 +58,9 @@
     <div class="entry-body">
         {% block entry-image %}
         {% if object.image %}
-        <div class="entry-image right">
+        <div class="entry-image responsive-right">
             <p class="">
-                <a href="{{ object.image.url }}" title="{{ object.title }}" rel="bookmark">
+                <a href="{{ object.image.url }}" title="{{ object.title }}">
                 {% thumbnail object.image "278x160" crop="center" as im %}
                     <img src="{{ im.url }}" alt="{{ object.title }}">
                 {% endthumbnail %}
@@ -79,7 +80,7 @@
         <p class="continue-reading">
             <a href="{{ object.get_absolute_url }}"
                 title="{% blocktrans with object=object.title %}Continue reading {{ object }}{% endblocktrans %}"
-                rel="bookmark" class="button radius secondary">
+                class="button radius secondary">
                 {% trans "Continue reading" %}
             </a>
         </p>
@@ -101,7 +102,7 @@
             {% for tag in object.tags_list %}
             <a href="{% url 'zinnia_tag_detail' tag %}"
                 title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
-                rel="tag">{{ tag }}</a>
+                >{{ tag }}</a>
             {% empty %}
             <span class="empty">{% trans "No tags" %}</span>
             {% endfor %}
@@ -109,4 +110,4 @@
         {% endblock %}
     </div>{% endif %}
     {% endblock %}
-</article>
+</div>
