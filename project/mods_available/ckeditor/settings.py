@@ -11,10 +11,12 @@ CKEDITOR_CONFIGS = {
     'zinnia': {
         # Reorganize/remove/add buttons
         'toolbar_Full': [
-            ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'Undo', 'Redo'],
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike'],
+            ['Link', 'Unlink'],
             ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
             ['Blockquote', 'CreateDiv'],
             ['Image', 'Table', 'HorizontalRule'],
+            ['Undo', 'Redo'],
             ['Source'],
             ['Maximize'],
         ],
