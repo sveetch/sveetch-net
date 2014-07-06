@@ -1,5 +1,11 @@
-cms_page_media
-uploads
-pages
-zinnia
-cache
+*
+!.gitignore
+!.keep
+
+# Keep the uploads folder, but ignore its content
+!uploads/
+uploads/*
+!uploads/.keep
+!_uploads_versions/
+_uploads_versions/*
+!_uploads_versions/.keep
