@@ -8,6 +8,11 @@ from zinnia.models.entry import Entry
 from zinnia.admin.entry import EntryAdmin
 
 class EntryWithCkeditor(EntryAdmin):
+    """
+    Customize entry admin to use ckeditor widget
+    
+    We should try something more stable and clean than override all TextField fields
+    """
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget(config_name='zinnia')},
     }

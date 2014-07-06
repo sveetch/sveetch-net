@@ -38,5 +38,7 @@ CKEDITOR_CONFIGS = {
         # append any code, even bad syntax and malicious code, so be careful
         "removePlugins": "stylesheetparser",
         "allowedContent": True,
+        # Lien pour activer "Explorer le serveur" au travers de django-filebrowser
+        'filebrowserBrowseUrl': "/admin/filebrowser/browse?pop=3",
     },
 }

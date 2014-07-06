@@ -24,7 +24,7 @@ class CustomMenu(Menu):
                 _('Administration'),
                 models=('django.contrib.*',)
             ),
-            items.MenuItem(_('Filebrowser'), reverse('fb_browse')),
+            items.MenuItem(_('Filebrowser'), reverse('filebrowser:fb_browse')),
         ]
 
     def init_with_context(self, context):
