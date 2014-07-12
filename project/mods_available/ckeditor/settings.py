@@ -29,7 +29,7 @@ CKEDITOR_CONFIGS = {
         'justifyClasses': [ 'text-left', 'text-center', 'text-right', 'AlignJustify' ],
         
         # Enable some plugins
-        'extraPlugins': 'blockquote,codemirror,div,justify,showblocks',
+        'extraPlugins': 'blockquote,codemirror,div,justify,showblocks,image2',
         
         # To enable showblocks on editor start without to use a button
         'startupOutlineBlocks': True,
