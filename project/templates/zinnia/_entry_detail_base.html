@@ -59,8 +59,8 @@
         {% block entry-image %}
         {% if object.image %}
         <div class="entry-image responsive-right">
-            <p class="">
-                <a href="{{ object.image.url }}" title="{{ object.title }}">
+            <p>
+                <a href="{{ object.image.url }}" title="{{ object.title }}" class="th">
                 {% thumbnail object.image "278x160" crop="center" as im %}
                     <img src="{{ im.url }}" alt="{{ object.title }}">
                 {% endthumbnail %}
@@ -71,10 +71,13 @@
         {% endblock %}
         
         {% block entry-content %}
-        <div class="entry-content">
+        <div class="entry-excerpt">
+            {{ object.excerpt|safe }}
+        </div>
+        {% if not continue_reading %}<div class="entry-content">
             {{ object_content }}
         </div>
-        {% endblock %}
+        {% endif %}{% endblock %}
         
         {% block continue-reading %}{% if continue_reading %}
         <p class="continue-reading">

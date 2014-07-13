@@ -32,6 +32,7 @@ AVALAIBLE_BUNDLES = {
         #"js/foundation/jquery.foundation.mediaQueryToggle.js",
         "js/foundation/jquery.event.move.js",
         "js/jquery/equalize.js",
+        "js/jquery/magnific-popup.js",
         "js/foundation/app.js",
         filters='yui_js',
         output='js/main.min.js'

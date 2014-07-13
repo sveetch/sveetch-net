@@ -18,6 +18,18 @@ $(document).ready(function() {
         $(this).addClass('no-reset-click');
     });
     
+    // Popin for image/iframe will not display on small media-query
+    if($(window).innerWidth()>768){
+        // Pop-in gallery
+        $('.gallery').magnificPopup({
+            delegate: '.row .columns a',
+            type: 'image',
+            gallery:{
+                enabled:true
+            }
+        });
+    }
+    
     //$.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
     $.fn.foundationButtons          ? $doc.foundationButtons() : null;
     //$.fn.foundationAccordion        ? $doc.foundationAccordion() : null;

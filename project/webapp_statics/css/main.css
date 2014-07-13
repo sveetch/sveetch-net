@@ -2818,11 +2818,11 @@ ul.inline-list > li > *, ul.link-list > li > * {
 
 /* Image Thumbnails ---------------------- */
 /* line 206, ../../../../../.rvm/gems/ruby-2.1.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_ui.scss */
-.th {
+.th, .gallery .row a {
   display: block;
 }
 /* line 207, ../../../../../.rvm/gems/ruby-2.1.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_ui.scss */
-.th img {
+.th img, .gallery .row a img {
   display: block;
   border: solid 4px #fff;
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
@@ -2843,7 +2843,7 @@ ul.inline-list > li > *, ul.link-list > li > * {
   transition-duration: 300ms;
 }
 /* line 209, ../../../../../.rvm/gems/ruby-2.1.1/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_ui.scss */
-.th:hover img, .th:focus img {
+.th:hover img, .gallery .row a:hover img, .th:focus img, .gallery .row a:focus img {
   -webkit-box-shadow: 0 0 6px 1px rgba(208, 145, 11, 0.5);
   -moz-box-shadow: 0 0 6px 1px rgba(208, 145, 11, 0.5);
   box-shadow: 0 0 6px 1px rgba(208, 145, 11, 0.5);
@@ -6352,6 +6352,540 @@ hr.big {
   color: #305A13;
 }
 
+/* Magnific Popup CSS */
+/* line 67, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 502;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* line 84, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 503;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 96, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-container {
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 111, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/* line 119, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-align-top .mfp-container:before {
+  display: none;
+}
+
+/* line 124, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 505;
+}
+
+/* line 133, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto;
+}
+
+/* line 139, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-ajax-cur {
+  cursor: progress;
+}
+
+/* line 143, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+
+/* line 148, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}
+
+/* line 154, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-auto-cursor .mfp-content {
+  cursor: auto;
+}
+
+/* line 161, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 168, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-loading.mfp-figure {
+  display: none;
+}
+
+/* line 173, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-hide {
+  display: none !important;
+}
+
+/* line 184, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-preloader {
+  color: #cccccc;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 504;
+}
+
+/* line 195, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-preloader a {
+  color: #cccccc;
+}
+
+/* line 198, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-preloader a:hover {
+  color: white;
+}
+
+/* line 203, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-s-ready .mfp-preloader {
+  display: none;
+}
+
+/* line 208, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-s-error .mfp-content {
+  display: none;
+}
+
+/* line 215, ../../../compass/scss/components/_magnific-popup.scss */
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  padding: 0;
+  z-index: 506;
+}
+
+/* line 225, ../../../compass/scss/components/_magnific-popup.scss */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 232, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  padding: 0 0 18px 10px;
+  color: white;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace;
+}
+/* line 251, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-close:hover, .mfp-close:focus {
+  opacity: 1;
+}
+/* line 255, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-close:active {
+  top: 1px;
+}
+
+/* line 259, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-close-btn-in .mfp-close {
+  color: #333333;
+}
+
+/* line 263, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: white;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%;
+}
+
+/* line 272, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #cccccc;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* line 283, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow {
+  position: absolute;
+  top: 0;
+  opacity: 0.65;
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 295, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow:active {
+  margin-top: -54px;
+}
+
+/* line 299, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow:hover,
+.mfp-arrow:focus {
+  opacity: 1;
+}
+
+/* line 308, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow:before, .mfp-arrow:after,
+.mfp-arrow .mfp-b,
+.mfp-arrow .mfp-a {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 35px;
+  margin-left: 35px;
+  border: solid transparent;
+}
+/* line 322, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow:after,
+.mfp-arrow .mfp-a {
+  opacity: 0.8;
+  border-top-width: 12px;
+  border-bottom-width: 12px;
+  top: 8px;
+}
+/* line 330, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow:before,
+.mfp-arrow .mfp-b {
+  border-top-width: 20px;
+  border-bottom-width: 20px;
+}
+
+/* line 337, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow-left {
+  left: 0;
+}
+/* line 341, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow-left:after,
+.mfp-arrow-left .mfp-a {
+  border-right: 12px solid #000;
+  left: 5px;
+}
+/* line 346, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow-left:before,
+.mfp-arrow-left .mfp-b {
+  border-right: 20px solid #FFF;
+}
+
+/* line 351, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow-right {
+  right: 0;
+}
+/* line 354, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow-right:after,
+.mfp-arrow-right .mfp-a {
+  border-left: 12px solid #000;
+  left: 3px;
+}
+/* line 359, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-arrow-right:before,
+.mfp-arrow-right .mfp-b {
+  border-left: 20px solid #FFF;
+}
+
+/* line 369, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* line 373, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-iframe-holder .mfp-content {
+  line-height: 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* line 378, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+/* line 384, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-iframe-scaler iframe {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: black;
+}
+
+/* line 393, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-iframe-holder .mfp-close {
+  top: -43px;
+}
+
+/* Main image in popup */
+/* line 406, ../../../compass/scss/components/_magnific-popup.scss */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto;
+}
+
+/* The shadow behind the image */
+/* line 420, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-figure:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  bottom: 40px;
+  display: block;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+/* line 433, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-figure {
+  line-height: 0;
+}
+
+/* line 436, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto;
+}
+
+/* line 444, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #f3f3f3;
+  padding-right: 36px;
+}
+
+/* line 451, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-figure small {
+  color: #bdbdbd;
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/* line 457, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-image-holder .mfp-content {
+  max-width: 100%;
+}
+
+/* line 461, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+   * Remove all paddings around the image on small screen
+   */
+  /* line 472, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* line 476, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile img.mfp-img {
+    padding: 0;
+  }
+
+  /* The shadow behind the image */
+  /* line 480, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+  }
+
+  /* line 485, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /* line 496, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-bottom-bar:empty {
+    padding: 0;
+  }
+
+  /* line 499, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px;
+  }
+
+  /* line 503, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0;
+  }
+
+  /* line 514, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px;
+  }
+}
+@media all and (max-width: 800px) {
+  /* line 527, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+
+  /* line 531, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0;
+  }
+
+  /* line 535, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%;
+  }
+
+  /* line 539, ../../../compass/scss/components/_magnific-popup.scss */
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+/* line 550, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-ie7 .mfp-img {
+  padding: 0;
+}
+/* line 553, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-ie7 .mfp-bottom-bar {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 560, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-ie7 .mfp-container {
+  padding: 0;
+}
+/* line 563, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-ie7 .mfp-content {
+  padding-top: 44px;
+}
+/* line 566, ../../../compass/scss/components/_magnific-popup.scss */
+.mfp-ie7 .mfp-close {
+  top: 0;
+  right: 0;
+  padding-top: 0;
+}
+
 /* line 2, ../../../compass/scss/components/_zinnia.scss */
 .empty {
   font-style: italic;
@@ -6565,50 +7099,11 @@ hr.big {
   margin: 0;
   padding: 5px 0 5px 5px;
   line-height: 0;
-  position: relative;
-  z-index: 1;
-  /* prevent shadows falling behind containers with backgrounds */
-  margin: 0;
-}
-/* line 157, ../../../compass/scss/components/_zinnia.scss */
-.blog-side-content .hentry .entry-image p img {
-  position: relative;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-}
-/* line 34, ../../../compass/scss/components/_lifted-corners.scss */
-.blog-side-content .hentry .entry-image p img::before, .blog-side-content .hentry .entry-image p img::after {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  bottom: 10px;
-  width: 70%;
-  height: 55%;
-  max-width: 300px;
-  /* avoid rotation causing ugly appearance at large container widths */
-  max-height: 100px;
-  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-}
-/* line 50, ../../../compass/scss/components/_lifted-corners.scss */
-.blog-side-content .hentry .entry-image p img::before {
-  left: 10px;
-  -webkit-transform: skew(-15deg) rotate(-6deg);
-  -moz-transform: skew(-15deg) rotate(-6deg);
-  -ms-transform: skew(-15deg) rotate(-6deg);
-  -o-transform: skew(-15deg) rotate(-6deg);
-  transform: skew(-15deg) rotate(-6deg);
-}
-/* line 56, ../../../compass/scss/components/_lifted-corners.scss */
-.blog-side-content .hentry .entry-image p img::after {
-  right: 10px;
-  -webkit-transform: skew(15deg) rotate(6deg);
-  -moz-transform: skew(15deg) rotate(6deg);
-  -ms-transform: skew(15deg) rotate(6deg);
-  -o-transform: skew(15deg) rotate(6deg);
-  transform: skew(15deg) rotate(6deg);
+  /*@include drop-shadow-lifted-corners-parent();
+  
+  img{
+      @include drop-shadow-lifted-corners($height: 16px, $margin: 10px, $angle: 6deg, $color: rgba(#000, .7));
+  }*/
 }
 /* line 165, ../../../compass/scss/components/_zinnia.scss */
 .blog-side-content #comments .comment-info-name {
@@ -6718,35 +7213,44 @@ hr.big {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset;
 }
 
-/* line 328, ../../../compass/scss/main.scss */
+/* line 329, ../../../compass/scss/main.scss */
+.gallery {
+  margin: 20px 0;
+}
+/* line 338, ../../../compass/scss/main.scss */
+.gallery .row + .row {
+  margin-top: 10px;
+}
+
+/* line 345, ../../../compass/scss/main.scss */
 #djangocodemirror-sample {
   width: auto !important;
 }
 
-/* line 332, ../../../compass/scss/main.scss */
+/* line 349, ../../../compass/scss/main.scss */
 body.documents #content-container {
   padding-bottom: 30px;
 }
 
-/* line 336, ../../../compass/scss/main.scss */
+/* line 353, ../../../compass/scss/main.scss */
 select {
   box-shadow: none;
 }
 
-/* line 342, ../../../compass/scss/main.scss */
+/* line 359, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox label {
   display: inline;
 }
-/* line 345, ../../../compass/scss/main.scss */
+/* line 362, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox span.custom.checkbox {
   cursor: pointer;
 }
-/* line 348, ../../../compass/scss/main.scss */
+/* line 365, ../../../compass/scss/main.scss */
 .ctrlHolder.checkbox span.custom.checkbox.checked:before {
   cursor: pointer;
 }
 
-/* line 354, ../../../compass/scss/main.scss */
+/* line 371, ../../../compass/scss/main.scss */
 fieldset {
   padding: 12px 12px;
   background-color: #FCFCFC;
@@ -6754,72 +7258,72 @@ fieldset {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* line 362, ../../../compass/scss/main.scss */
+/* line 379, ../../../compass/scss/main.scss */
 fieldset legend, fieldset label {
   font-size: 16px;
   background-color: transparent;
 }
-/* line 368, ../../../compass/scss/main.scss */
+/* line 385, ../../../compass/scss/main.scss */
 fieldset .row + .row {
   margin-top: 12px;
 }
 
-/* line 375, ../../../compass/scss/main.scss */
+/* line 392, ../../../compass/scss/main.scss */
 .row .datetimesplit .row {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 379, ../../../compass/scss/main.scss */
+/* line 396, ../../../compass/scss/main.scss */
 .datetimesplit .dateinput {
   float: left;
   width: 49.5%;
 }
-/* line 383, ../../../compass/scss/main.scss */
+/* line 400, ../../../compass/scss/main.scss */
 .datetimesplit .timeinput {
   float: right;
   width: 49.5%;
 }
 
-/* line 395, ../../../compass/scss/main.scss */
+/* line 412, ../../../compass/scss/main.scss */
 input.postfix.button[type="submit"],
 input.postfix.medium.button[type="submit"] {
   font-size: 13px;
 }
 
-/* line 400, ../../../compass/scss/main.scss */
+/* line 417, ../../../compass/scss/main.scss */
 .buttonHolder {
   text-align: right;
 }
-/* line 404, ../../../compass/scss/main.scss */
+/* line 421, ../../../compass/scss/main.scss */
 .buttonHolder input.button + input.button,
 .buttonHolder button + button {
   margin-left: 7.5px;
 }
 
-/* line 409, ../../../compass/scss/main.scss */
+/* line 426, ../../../compass/scss/main.scss */
 table.full {
   width: 100%;
 }
 
-/* line 415, ../../../compass/scss/main.scss */
+/* line 432, ../../../compass/scss/main.scss */
 .alert-box a {
   color: white;
   text-decoration: underline;
 }
-/* line 420, ../../../compass/scss/main.scss */
+/* line 437, ../../../compass/scss/main.scss */
 .alert-box p {
   margin: 0;
 }
-/* line 423, ../../../compass/scss/main.scss */
+/* line 440, ../../../compass/scss/main.scss */
 .alert-box p + p {
   margin-top: 10px;
 }
-/* line 428, ../../../compass/scss/main.scss */
+/* line 445, ../../../compass/scss/main.scss */
 .alert-box.medium {
   padding: 14px 15px 15px;
 }
 
-/* line 436, ../../../compass/scss/main.scss */
+/* line 453, ../../../compass/scss/main.scss */
 #footer-container {
   padding: 10px 0 15px;
   font-size: 12px;
@@ -6834,28 +7338,28 @@ table.full {
   border-top: 4px solid #cad4a9;
 }
 @media (max-width: 1023px) {
-  /* line 436, ../../../compass/scss/main.scss */
+  /* line 453, ../../../compass/scss/main.scss */
   #footer-container {
     display: none;
   }
 }
-/* line 448, ../../../compass/scss/main.scss */
+/* line 465, ../../../compass/scss/main.scss */
 #footer-container p, #footer-container ul, #footer-container li {
   font-size: 12px;
 }
-/* line 452, ../../../compass/scss/main.scss */
+/* line 469, ../../../compass/scss/main.scss */
 #footer-container a {
   color: #b17a04;
 }
-/* line 456, ../../../compass/scss/main.scss */
+/* line 473, ../../../compass/scss/main.scss */
 #footer-container .links {
   padding: 25px 10px;
 }
-/* line 460, ../../../compass/scss/main.scss */
+/* line 477, ../../../compass/scss/main.scss */
 #footer-container .equalized-item + .equalized-item {
   border-left: 1px solid #CCCCCC;
 }
-/* line 463, ../../../compass/scss/main.scss */
+/* line 480, ../../../compass/scss/main.scss */
 #footer-container .equalized-item + .equalized-item:before {
   content: "";
   display: block;
@@ -6866,17 +7370,17 @@ table.full {
   bottom: 0;
   border-left: 1px solid #FFFFFF;
 }
-/* line 474, ../../../compass/scss/main.scss */
+/* line 491, ../../../compass/scss/main.scss */
 #footer-container .equalized-item + .equalized-item *:last-child {
   margin-bottom: 0;
 }
-/* line 479, ../../../compass/scss/main.scss */
+/* line 496, ../../../compass/scss/main.scss */
 #footer-container .site-credits {
   margin-top: 10px;
   padding: 15px 5px 0;
   border-top: 1px solid #CCCCCC;
 }
-/* line 484, ../../../compass/scss/main.scss */
+/* line 501, ../../../compass/scss/main.scss */
 #footer-container .site-credits:before {
   content: "";
   display: block;

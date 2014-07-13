@@ -1,0 +1,17 @@
+{
+    "gallery_2_columns.html": {
+        "title": "Two columns gallery",
+        "description": "A gallery on two columns, each item have a popup for a larger size view",
+        "image": "gallery_2_columns.png"
+    },
+    "gallery_3_columns.html": {
+        "title": "Three columns gallery",
+        "description": "A gallery on three columns, each item have a popup for a larger size view",
+        "image": "gallery_3_columns.png"
+    },
+    "gallery_4_columns.html": {
+        "title": "Four columns gallery",
+        "description": "A gallery on four columns, each item have a popup for a larger size view",
+        "image": "gallery_4_columns.png"
+    }
+}

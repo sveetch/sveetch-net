@@ -321,8 +321,25 @@ $header-border-top: 10px;
 // *****
 // Components
 // *****
+@import "components/magnific-popup";
 @import "components/zinnia";
 @import "components/djangotribune";
+
+// For some galleries grid
+.gallery{
+    margin: 20px 0;
+    
+    .row{
+        // Stealed from foundation/components/modules/_ui.scss
+        a{
+            @extend .th;
+        }
+        
+        &+.row{
+            margin-top: 10px;
+        }
+    }
+}
 
 // For djangocodemirror
 #djangocodemirror-sample{

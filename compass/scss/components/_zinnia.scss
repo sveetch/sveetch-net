@@ -152,11 +152,11 @@
                 margin: 0;
                 padding: 5px 0 5px 5px;
                 line-height: 0;
-                @include drop-shadow-lifted-corners-parent();
+                /*@include drop-shadow-lifted-corners-parent();
                 
                 img{
                     @include drop-shadow-lifted-corners($height: 16px, $margin: 10px, $angle: 6deg, $color: rgba(#000, .7));
-                }
+                }*/
             }
         }
     }
