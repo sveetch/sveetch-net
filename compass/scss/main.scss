@@ -339,6 +339,11 @@ $header-border-top: 10px;
             margin-top: 10px;
         }
     }
+    
+    //single item does not need of margin separations
+    &.entry-image{
+        margin: 0 0 10px;
+    }
 }
 
 // For djangocodemirror

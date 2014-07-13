@@ -18,17 +18,40 @@ $(document).ready(function() {
         $(this).addClass('no-reset-click');
     });
     
-    // Popin for image/iframe will not display on small media-query
-    if($(window).innerWidth()>768){
-        // Pop-in gallery
-        $('.gallery').magnificPopup({
-            delegate: '.row .columns a',
-            type: 'image',
-            gallery:{
-                enabled:true
-            }
-        });
-    }
+    // Pop-in gallery
+    $('.image-popin').magnificPopup({
+        delegate: '.th',
+        type: 'image',
+        gallery:{
+            enabled: false
+        },
+        // Only for medium and more screen resolution, mobiles will have 
+        // default link behaviors
+        disableOn: function() {
+            if( $(window).innerWidth() < 768 ) {
+                return false;
+            } 
+            return true;
+        }
+        
+    });
+    // Pop-in gallery
+    $('.gallery').magnificPopup({
+        delegate: '.th, .row .columns a',
+        type: 'image',
+        gallery:{
+            enabled: true
+        },
+        // Only for medium and more screen resolution, mobiles will have 
+        // default link behaviors
+        disableOn: function() {
+            if( $(window).innerWidth() < 768 ) {
+                return false;
+            } 
+            return true;
+        }
+        
+    });
     
     //$.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
     $.fn.foundationButtons          ? $doc.foundationButtons() : null;

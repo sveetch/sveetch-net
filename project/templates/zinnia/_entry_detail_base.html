@@ -58,7 +58,7 @@
     <div class="entry-body">
         {% block entry-image %}
         {% if object.image %}
-        <div class="entry-image responsive-right">
+        <div class="entry-image{% if not continue_reading %} gallery{% else %} image-popin{% endif %} responsive-right">
             <p>
                 <a href="{{ object.image.url }}" title="{{ object.title }}" class="th">
                 {% thumbnail object.image "278x160" crop="center" as im %}
