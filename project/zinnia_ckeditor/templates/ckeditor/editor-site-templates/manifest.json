@@ -13,5 +13,10 @@
         "title": "Four columns gallery",
         "description": "A gallery on four columns, each item have a popup for a larger size view",
         "image": "gallery_4_columns.png"
+    },
+    "game_review.html": {
+        "title": "Game review article",
+        "description": "Sample of an article to make a game review, contain 3 sections with titles, text and image gallery.",
+        "image": "game_review.png"
     }
 }
