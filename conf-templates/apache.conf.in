@@ -9,8 +9,7 @@
         <Directory ${buildout:directory}>
             Options ExecCGI FollowSymLinks
             AllowOverride AuthConfig Indexes Limit
-            Order allow,deny
-            Allow from all
+            Require all granted
 
             AddHandler fcgid-script .fcgi
             RewriteEngine On
