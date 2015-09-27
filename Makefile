@@ -38,3 +38,4 @@ build_project:
 	mkdir -p eggs
 	bin/python bootstrap.py
 	bin/buildout -v
+	chmod -R 0777 var/log
