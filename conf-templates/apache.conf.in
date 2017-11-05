@@ -14,7 +14,7 @@
             AddHandler fcgid-script .fcgi
             RewriteEngine On
             RewriteCond %{REQUEST_FILENAME} !-f
-            RewriteRule ^(.*)$ bin/django-instance runfcgi/$1 [QSA,L]
+            RewriteRule ^(.*)$ bin/django-instance.fcgi/$1 [QSA,L]
         </Directory>
 
         #<Location /tribune>
