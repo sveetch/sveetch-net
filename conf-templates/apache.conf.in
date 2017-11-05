@@ -14,9 +14,9 @@
             AddHandler fcgid-script .fcgi
             RewriteEngine On
             RewriteCond %{REQUEST_FILENAME} !-f
-            RewriteRule ^(.*)$ bin/django-instance.fcgi/$1 [QSA,L]
+            RewriteRule ^(.*)$ bin/django-instance runfcgi/$1 [QSA,L]
         </Directory>
-        
+
         #<Location /tribune>
             # Include tor ip to deny all of them
             #Include tor-ip.conf
@@ -36,7 +36,7 @@
         <Location "/media/">
             SetHandler None
         </Location>
-        
+
         Alias /static/ "${buildout:directory}/project/static/"
         <Location "/static/">
             SetHandler None
