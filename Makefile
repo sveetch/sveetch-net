@@ -15,7 +15,7 @@ help:
 delpyc:
 	find . -name "*\.pyc"|xargs rm -f
 
-clean: delpyc 
+clean: delpyc
 	rm -Rf bin include eggs local lib parts django-apps-src develop-eggs .installed.cfg compass/.sass-cache project/webapp_statics/.webassets-cache
 
 scss:
